@@ -1,8 +1,8 @@
 import React from "react";
 import type { Metadata } from "next";
 import Breadcrumb from "@/components/common/Breadcrumb";
-import ContactSection from "@/components/ContactSection";
-import data from "@/data/sun-aviora.json";
+import ContactSection from "@/components/contact/ContactSection";
+import { getSunAvioraSections } from "@/lib/sun-aviora";
 
 export const metadata: Metadata = {
   title: "Contact Us - SunAviora",
@@ -11,17 +11,22 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  const { contactPage } = data;
+  const sections = getSunAvioraSections();
+  const pageBanner = sections.PageBanners?.variants?.SunAvioraPageBanners1?.pages?.contact;
 
   return (
     <main className="w-full flex flex-col">
       <Breadcrumb
-        title={contactPage.banner.title}
-        breadcrumbs={contactPage.banner.breadcrumbs}
+        data={pageBanner}
+        title={pageBanner?.title || "Contact Us"}
+        breadcrumbs={pageBanner?.breadcrumbs || [
+          { label: "Home", href: "/" },
+          { label: "Contact Us" },
+        ]}
       />
 
       {/* Main Contact Section with Form and Map */}
-      <ContactSection />
+      <ContactSection data={sections.ContactPage?.variants?.SunAvioraContactPage1} />
     </main>
   );
 }

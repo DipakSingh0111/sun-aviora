@@ -1,6 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
-import ProjectDetailClient from "@/components/ProjectDetailClient";
+import ProjectDetailClient from "@/components/projects/ProjectDetailClient";
+import { getSunAvioraSections } from "@/lib/sun-aviora";
 
 export const metadata: Metadata = {
   title: "Project Detail - SunAviora",
@@ -9,5 +10,10 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectDetailPage() {
-  return <ProjectDetailClient />;
+  const sections = getSunAvioraSections();
+  return (
+    <ProjectDetailClient
+      data={sections.Projects?.variants?.SunAvioraProjects1?.details}
+    />
+  );
 }

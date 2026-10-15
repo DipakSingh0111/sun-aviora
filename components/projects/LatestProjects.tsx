@@ -8,7 +8,8 @@ import { HiHome } from "react-icons/hi2";
 import { BsBuildingsFill, BsBatteryCharging } from "react-icons/bs";
 import { PiPlantFill } from "react-icons/pi";
 import { FiArrowUpRight } from "react-icons/fi";
-import data from "@/data/sun-aviora.json";
+import type { SectionProps } from "@/types/sun-aviora.types";
+import { getSunAvioraSections } from "@/lib/sun-aviora";
 
 function ProjectIcon({ type }: { type: string }) {
   const iconProps = { className: "w-8 h-8 text-[#15803d]" };
@@ -26,8 +27,9 @@ function ProjectIcon({ type }: { type: string }) {
   }
 }
 
-export default function LatestProjects() {
-  const { latestProjects } = data;
+export default function LatestProjects({ data }: SectionProps.Projects) {
+  const projectsData = data || getSunAvioraSections().Projects?.variants?.SunAvioraProjects1;
+  if (!projectsData) return null;
 
   return (
     <section className="pt-10 md:pt-16 pb-4 md:pb-6 px-6 sm:px-10 lg:px-16 bg-white font-sans overflow-hidden">
@@ -42,25 +44,25 @@ export default function LatestProjects() {
           <div className="flex items-center justify-center gap-3 mb-3">
             <span className="w-8 h-[2px] bg-[#16a34a]" />
             <span className="text-[#16a34a] font-semibold text-sm uppercase tracking-wider">
-              {latestProjects.badge}
+              {projectsData.badge}
             </span>
             <span className="w-8 h-[2px] bg-[#16a34a]" />
           </div>
 
           <h2 className="text-3xl md:text-4xl lg:text-[44px] font-bold text-[#0f172a] mb-4">
-            {latestProjects.titlePrefix}
+            {projectsData.heading.main}
             <span className="text-[#16a34a]">
-              {latestProjects.titleHighlight}
+              {projectsData.heading.highlight}
             </span>
           </h2>
 
           <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-            {latestProjects.description}
+            {projectsData.description}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {latestProjects.projects.map((project, index) => (
+          {projectsData.list.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 35 }}

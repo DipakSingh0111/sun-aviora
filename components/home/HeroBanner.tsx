@@ -3,16 +3,18 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import siteData from "@/data/sun-aviora.json";
+import type { SectionProps } from "@/types/sun-aviora.types";
+import { getSunAvioraSections } from "@/lib/sun-aviora";
 
-export default function HeroBanner() {
-  const { heroBanner } = siteData;
+export default function HeroBanner({ data }: SectionProps.HeroBanner) {
+  const heroData = data || getSunAvioraSections().HeroBanner?.variants?.SunAvioraHeroBanner1;
+  if (!heroData) return null;
 
   return (
     <section className="relative w-full min-h-[420px] sm:min-h-[480px] md:min-h-[540px] lg:min-h-[600px] flex items-center overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center sm:bg-[center_top] bg-no-repeat transition-transform duration-1000 scale-105"
-        style={{ backgroundImage: `url('${heroBanner.backgroundImage}')` }}
+        style={{ backgroundImage: `url('${heroData.backgroundImage}')` }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/25 to-transparent" />
       </div>
@@ -26,7 +28,7 @@ export default function HeroBanner() {
             className="flex items-center gap-3 mb-4 sm:mb-6"
           >
             <span className="text-white/95 text-xs sm:text-sm font-semibold tracking-[0.22em] uppercase">
-              {heroBanner.badge}
+              {heroData.badge}
             </span>
             <span className="w-8 sm:w-12 h-[2.5px] bg-[#fbbf24] rounded-full inline-block" />
           </motion.div>
@@ -38,7 +40,7 @@ export default function HeroBanner() {
               transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
               className="block text-white drop-shadow-md"
             >
-              {heroBanner.titleLine1}
+              {heroData.heading.main}
             </motion.span>
             <motion.span
               initial={{ opacity: 0, x: -30 }}
@@ -46,7 +48,7 @@ export default function HeroBanner() {
               transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
               className="block text-[#ffb703] drop-shadow-md"
             >
-              {heroBanner.titleLine2}
+              {heroData.heading.highlight}
             </motion.span>
           </h1>
 
@@ -56,7 +58,7 @@ export default function HeroBanner() {
             transition={{ duration: 0.7, delay: 0.45, ease: "easeOut" }}
             className="mt-5 sm:mt-7 text-base sm:text-lg md:text-xl text-white/95 font-medium leading-relaxed max-w-xl"
           >
-            {heroBanner.description}
+            {heroData.description}
           </motion.p>
 
           <motion.div
@@ -66,11 +68,11 @@ export default function HeroBanner() {
             className="mt-8 sm:mt-10"
           >
             <Link
-              href={heroBanner.ctaButton.href}
+              href={heroData.cta.href}
               className="group inline-flex items-center justify-center gap-2.5 px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#ff9f00] to-[#ffb703] hover:from-[#f59e0b] hover:to-[#eab308] text-[#0f2e48] font-bold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-1 active:translate-y-0"
             >
-              <span>{heroBanner.ctaButton.label}</span>
-              {heroBanner.ctaButton.showArrow && (
+              <span>{heroData.cta.label}</span>
+              {heroData.cta.showArrow && (
                 <svg
                   className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1"
                   fill="none"

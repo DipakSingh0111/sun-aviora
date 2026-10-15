@@ -4,13 +4,15 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiPlus, FiMinus } from "react-icons/fi";
-import data from "@/data/sun-aviora.json";
+import type { SectionProps } from "@/types/sun-aviora.types";
+import { getSunAvioraSections } from "@/lib/sun-aviora";
 
-export default function FaqSection() {
-  const { faqPage } = data;
-  const { leftCard, rightSection } = faqPage;
-
+export default function FaqSection({ data }: SectionProps.Faq) {
+  const faqData = data || getSunAvioraSections().Faq?.variants?.SunAvioraFaq1;
   const [openId, setOpenId] = useState<string>("1");
+
+  if (!faqData) return null;
+  const { leftCard, rightSection } = faqData;
 
   const toggleFaq = (id: string) => {
     setOpenId((prev) => (prev === id ? "" : id));
@@ -47,11 +49,13 @@ export default function FaqSection() {
                   </div>
 
                   <h2 className="text-3xl sm:text-[36px] font-black text-[#0f2e48] leading-[1.18] tracking-tight">
-                    {leftCard.titleLine1}{" "}
-                    <span className="block">{leftCard.titleLine2}</span>
-                    <span className="text-[#15803d] block mt-1">
-                      {leftCard.titleHighlight}
-                    </span>
+                    {leftCard.heading.main}{" "}
+                    {leftCard.heading.middle && <span className="block">{leftCard.heading.middle}</span>}
+                    {leftCard.heading.highlight && (
+                      <span className="text-[#15803d] block mt-1">
+                        {leftCard.heading.highlight}
+                      </span>
+                    )}
                   </h2>
 
                   <p className="mt-4 text-gray-700 text-sm sm:text-[15px] font-medium leading-relaxed max-w-sm">
@@ -82,10 +86,12 @@ export default function FaqSection() {
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#0f172a] leading-[1.2] tracking-tight">
-              {rightSection.titlePrefix}
-              <span className="text-[#16a34a]">
-                {rightSection.titleHighlight}
-              </span>
+              {rightSection.heading.main}
+              {rightSection.heading.highlight && (
+                <span className="text-[#16a34a]">
+                  {rightSection.heading.highlight}
+                </span>
+              )}
             </h2>
 
             <p className="mt-4 text-gray-600 text-sm sm:text-base leading-relaxed max-w-2xl">
@@ -93,7 +99,7 @@ export default function FaqSection() {
             </p>
 
             <div className="mt-8 space-y-3.5">
-              {rightSection.faqs.map((faq, index) => {
+              {rightSection.list.map((faq, index) => {
                 const isOpen = openId === faq.id;
 
                 return (

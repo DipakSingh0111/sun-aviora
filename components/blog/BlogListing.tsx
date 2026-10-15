@@ -4,14 +4,21 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FiCalendar, FiFolder, FiChevronLeft, FiChevronRight, FiChevronRight as FiArrowRight } from "react-icons/fi";
-import data from "@/data/sun-aviora.json";
+import type { SectionProps } from "@/types/sun-aviora.types";
+import { getSunAvioraSections } from "@/lib/sun-aviora";
 
-export default function BlogListing() {
-  const { blogPage } = data;
-  const { header, posts } = blogPage;
-
+export default function BlogListing({ data }: SectionProps.BlogNews) {
+  const blogData = data || getSunAvioraSections().BlogNews?.variants?.SunAvioraBlogNews1;
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 3;
+
+  if (!blogData) return null;
+  const header = blogData.page?.header || {
+    badge: blogData.badge,
+    heading: blogData.heading,
+    description: blogData.description,
+  };
+  const posts = blogData.page?.list || blogData.list;
 
   return (
     <section className="py-14 md:py-20 px-6 sm:px-10 lg:px-16 bg-white font-sans overflow-hidden">
@@ -26,8 +33,10 @@ export default function BlogListing() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#0f172a] mb-4 leading-tight tracking-tight lg:whitespace-nowrap">
-            {header.titlePrefix}
-            <span className="text-[#16a34a]">{header.titleHighlight}</span>
+            {header.heading.main}
+            {header.heading.highlight && (
+              <span className="text-[#16a34a]">{header.heading.highlight}</span>
+            )}
           </h2>
 
           <p className="text-gray-600 text-sm md:text-base leading-relaxed max-w-2xl mx-auto">

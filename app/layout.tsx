@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
+import { getSunAvioraSections } from "@/lib/sun-aviora";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -24,15 +25,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const sections = getSunAvioraSections();
+
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Navbar />
+        <Navbar data={sections.Header?.variants?.SunAvioraHeader1} />
         {children}
-        <Footer />
+        <Footer data={sections.Footer?.variants?.SunAvioraFooter1} />
       </body>
     </html>
   );

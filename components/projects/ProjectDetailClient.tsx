@@ -18,7 +18,8 @@ import { BsArrowRightCircle } from "react-icons/bs";
 import { LuSettings2 } from "react-icons/lu";
 import { HiLightBulb } from "react-icons/hi2";
 import Breadcrumb from "@/components/common/Breadcrumb";
-import data from "@/data/sun-aviora.json";
+import { getSunAvioraSections } from "@/lib/sun-aviora";
+import type { ProjectDetailsData } from "@/types/sun-aviora.types";
 
 function SpecIcon({ type }: { type: string }) {
   const iconProps = { className: "w-4 h-4 text-[#16a34a] shrink-0" };
@@ -44,23 +45,38 @@ function SpecIcon({ type }: { type: string }) {
   }
 }
 
-export default function ProjectDetailClient() {
-  const { projectDetailData } = data;
-  const { banner, heroSection, relatedProjects, overview, challengesSolutions, resultsImpact } =
-    projectDetailData;
+export interface ProjectDetailClientProps {
+  data?: ProjectDetailsData;
+}
+
+export default function ProjectDetailClient({ data }: ProjectDetailClientProps) {
+  const sections = getSunAvioraSections();
+  const projectDetails = data || sections.Projects?.variants?.SunAvioraProjects1?.details;
+  const pageBanner = sections.PageBanners?.variants?.SunAvioraPageBanners1?.pages?.projectDetail;
+
+  const heroSection = projectDetails?.heroSection;
+  const relatedProjects = projectDetails?.relatedProjects || [];
+  const overview = projectDetails?.overview;
+  const challengesSolutions = projectDetails?.challengesSolutions;
+  const resultsImpact = projectDetails?.resultsImpact;
 
   return (
     <main className="w-full flex flex-col font-sans">
       <Breadcrumb
-        title={banner.title}
-        breadcrumbs={banner.breadcrumbs}
+        data={pageBanner}
+        title={pageBanner?.title || "Project Detail"}
+        breadcrumbs={pageBanner?.breadcrumbs || [
+          { label: "Home", href: "/" },
+          { label: "Our Projects", href: "/projects" },
+          { label: "Project Detail" },
+        ]}
       />
 
       <section className="py-14 md:py-20 px-6 sm:px-10 lg:px-16 max-w-[1400px] mx-auto w-full bg-white">
         {/* Top Hero Container with Floating Specifications Card */}
         <div className="relative w-full rounded-[34px] overflow-hidden shadow-lg border border-gray-100 min-h-[380px] sm:min-h-[460px] md:min-h-[500px]">
           <Image
-            src={heroSection.image}
+            src={heroSection?.image || "/images/Solar-farm.png"}
             alt="Solar Power Plant Installation"
             fill
             className="object-cover"
@@ -73,14 +89,14 @@ export default function ProjectDetailClient() {
             <div className="bg-white/95 backdrop-blur-md rounded-[28px] p-6 sm:p-7 shadow-2xl border border-white/80 h-full flex flex-col justify-between">
               <div>
                 <h3 className="text-lg sm:text-xl font-bold text-[#0f2e48] mb-4 pb-3 border-b border-gray-100">
-                  {heroSection.specCard.titlePrefix}
+                  {heroSection?.specCard?.heading?.main || "Project Features & "}
                   <span className="text-[#16a34a]">
-                    {heroSection.specCard.titleHighlight}
+                    {heroSection?.specCard?.heading?.highlight || "Specifications"}
                   </span>
                 </h3>
 
                 <div className="space-y-2.5">
-                  {heroSection.specCard.specs.map((item, idx) => (
+                  {(heroSection?.specCard?.list || []).map((item, idx) => (
                     <div
                       key={idx}
                       className="flex items-center justify-between text-xs sm:text-[13px] py-1 border-b border-gray-50 last:border-b-0"
@@ -154,23 +170,23 @@ export default function ProjectDetailClient() {
             <div>
               <div className="relative mb-4">
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0f2e48]">
-                  {overview.titlePrefix}
-                  <span className="text-[#16a34a]">{overview.titleHighlight}</span>
+                  {overview?.heading?.main || "Project "}
+                  <span className="text-[#16a34a]">{overview?.heading?.highlight || "Overview"}</span>
                 </h2>
                 <div className="w-10 h-[3px] bg-[#fbbf24] rounded-full mt-2" />
               </div>
 
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-                {overview.description}
+                {overview?.description}
               </p>
             </div>
 
             {/* Challenges & Solutions */}
             <div className="mt-10">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0f2e48] mb-6">
-                {challengesSolutions.titlePrefix}
+                {challengesSolutions?.heading?.main || "Challenges & "}
                 <span className="text-[#16a34a]">
-                  {challengesSolutions.titleHighlight}
+                  {challengesSolutions?.heading?.highlight || "Solutions"}
                 </span>
               </h2>
 
@@ -185,7 +201,7 @@ export default function ProjectDetailClient() {
                   </div>
 
                   <ul className="space-y-3.5">
-                    {challengesSolutions.challenges.map((c, i) => (
+                    {(challengesSolutions?.challenges || []).map((c, i) => (
                       <li
                         key={i}
                         className="flex items-start gap-3 text-xs sm:text-[14px] text-gray-700 leading-snug"
@@ -207,7 +223,7 @@ export default function ProjectDetailClient() {
                   </div>
 
                   <ul className="space-y-3.5">
-                    {challengesSolutions.solutions.map((s, i) => (
+                    {(challengesSolutions?.solutions || []).map((s, i) => (
                       <li
                         key={i}
                         className="flex items-start gap-3 text-xs sm:text-[14px] text-gray-700 leading-snug"
@@ -225,26 +241,28 @@ export default function ProjectDetailClient() {
             <div className="mt-10">
               <div className="relative mb-4">
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0f2e48]">
-                  {resultsImpact.titlePrefix}
+                  {resultsImpact?.heading?.main || "Results & "}
                   <span className="text-[#16a34a]">
-                    {resultsImpact.titleHighlight}
+                    {resultsImpact?.heading?.highlight || "Impact"}
                   </span>
                 </h2>
                 <div className="w-10 h-[3px] bg-[#fbbf24] rounded-full mt-2" />
               </div>
 
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-                {resultsImpact.description}
+                {resultsImpact?.description}
               </p>
 
-              <div className="relative w-full aspect-[16/9] sm:aspect-[16/8] rounded-[28px] overflow-hidden shadow-lg border border-gray-100 mt-6">
-                <Image
-                  src={resultsImpact.bottomImage}
-                  alt="Solar Power Plant Result"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+              {resultsImpact?.bottomImage && (
+                <div className="relative w-full aspect-[16/9] sm:aspect-[16/8] rounded-[28px] overflow-hidden shadow-lg border border-gray-100 mt-6">
+                  <Image
+                    src={resultsImpact.bottomImage}
+                    alt="Solar Power Plant Result"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              )}
             </div>
 
           </div>

@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { PiSolarPanelFill } from "react-icons/pi";
-import { FaUsers, FaHardHat, FaTrophy } from "react-icons/fa";
-import data from "@/data/sun-aviora.json";
+import type { SectionProps } from "@/types/sun-aviora.types";
+import { getSunAvioraSections } from "@/lib/sun-aviora";
 
 function StatIcon({ type }: { type: string }) {
   const strokeColor = "#14532d";
@@ -277,21 +276,22 @@ function Counter({
   );
 }
 
-export default function StatsSection() {
-  const { statsSection } = data;
+export default function StatsSection({ data }: SectionProps.Stats) {
+  const statsData = data || getSunAvioraSections().Stats?.variants?.SunAvioraStats1;
+  if (!statsData) return null;
 
   return (
     <section className="relative w-full py-16 md:py-20 overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url('${statsSection.backgroundImage}')` }}
+        style={{ backgroundImage: `url('${statsData.backgroundImage}')` }}
       >
         <div className="absolute inset-0 bg-[#061826]/80 backdrop-blur-[2px]" />
       </div>
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {statsSection.stats.map((item, index) => (
+          {statsData.list.map((item) => (
             <div
               key={item.id}
               className="relative backdrop-blur-md bg-white/[0.07] border border-white/20 rounded-[22px] p-6 sm:p-7 flex items-center gap-5 transition-all duration-300 hover:bg-white/[0.14] hover:border-white/40 hover:-translate-y-1"

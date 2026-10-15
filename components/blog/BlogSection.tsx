@@ -5,12 +5,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FiCalendar, FiFolder, FiChevronLeft, FiChevronRight, FiChevronRight as FiArrowRight } from "react-icons/fi";
-import data from "@/data/sun-aviora.json";
+import type { SectionProps } from "@/types/sun-aviora.types";
+import { getSunAvioraSections } from "@/lib/sun-aviora";
 
-export default function BlogSection() {
-  const { blogSection } = data;
+export default function BlogSection({
+  data,
+  limit,
+}: SectionProps.BlogNews) {
+  const blogData = data || getSunAvioraSections().BlogNews?.variants?.SunAvioraBlogNews1;
   const sliderRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  if (!blogData) return null;
+
+  const rawPosts = blogData.list;
+  const posts = limit ? rawPosts.slice(0, limit) : rawPosts;
 
   const scrollToIndex = (index: number) => {
     if (!sliderRef.current) return;
@@ -26,7 +35,7 @@ export default function BlogSection() {
   };
 
   const handleNext = () => {
-    const nextIdx = Math.min(activeIndex + 1, blogSection.posts.length - 1);
+    const nextIdx = Math.min(activeIndex + 1, posts.length - 1);
     scrollToIndex(nextIdx);
   };
 
@@ -40,7 +49,7 @@ export default function BlogSection() {
     const scrollLeft = sliderRef.current.scrollLeft;
     const cardWidth = sliderRef.current.children[0]?.clientWidth || 300;
     const newIdx = Math.round(scrollLeft / cardWidth);
-    if (newIdx !== activeIndex && newIdx < blogSection.posts.length) {
+    if (newIdx !== activeIndex && newIdx < posts.length) {
       setActiveIndex(newIdx);
     }
   };
@@ -58,20 +67,20 @@ export default function BlogSection() {
           <div className="flex items-center justify-center gap-3 mb-3">
             <span className="w-8 h-[2px] bg-[#16a34a]" />
             <span className="text-[#16a34a] font-semibold text-sm uppercase tracking-wider">
-              {blogSection.badge}
+              {blogData.badge}
             </span>
             <span className="w-8 h-[2px] bg-[#16a34a]" />
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#0f172a] mb-4 leading-tight tracking-tight lg:whitespace-nowrap">
-            {blogSection.titlePrefix}
+            {blogData.heading.main}
             <span className="text-[#16a34a]">
-              {blogSection.titleHighlight}
+              {blogData.heading.highlight}
             </span>
           </h2>
 
           <p className="text-gray-600 text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
-            {blogSection.description}
+            {blogData.description}
           </p>
         </motion.div>
 
@@ -80,7 +89,7 @@ export default function BlogSection() {
           onScroll={handleScroll}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-4"
         >
-          {blogSection.posts.map((post, index) => (
+          {posts.map((post, index) => (
             <motion.article
               key={post.id}
               initial={{ opacity: 0, y: 35 }}
@@ -154,7 +163,7 @@ export default function BlogSection() {
           </button>
 
           <div className="flex items-center gap-2">
-            {blogSection.posts.map((_, i) => (
+            {posts.map((_, i) => (
               <button
                 key={i}
                 type="button"
@@ -172,10 +181,10 @@ export default function BlogSection() {
           <button
             type="button"
             onClick={handleNext}
-            disabled={activeIndex >= blogSection.posts.length - 1}
+            disabled={activeIndex >= posts.length - 1}
             aria-label="Next blog posts"
             className={`w-9 h-9 rounded-full flex items-center justify-center border transition-all ${
-              activeIndex >= blogSection.posts.length - 1
+              activeIndex >= posts.length - 1
                 ? "border-gray-200 text-gray-300 cursor-not-allowed"
                 : "border-green-200 bg-[#eaf8ef] text-[#16a34a] hover:bg-[#16a34a] hover:text-white cursor-pointer"
             }`}

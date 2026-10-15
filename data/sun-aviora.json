@@ -1,927 +1,1294 @@
 {
-  "navbar": {
-    "topBar": {
-      "visible": true,
-      "backgroundColor": "#0c4e4b"
-    },
-    "logo": {
-      "src": "/images/logo (1).png",
-      "alt": "SunAviora - Powering a Greener Future",
-      "href": "/"
-    },
-    "navLinks": [
-      { "label": "Home", "href": "/", "isActive": true },
-      { "label": "About", "href": "/about", "isActive": false },
-      { "label": "Services", "href": "/services", "isActive": false },
-      { "label": "Projects", "href": "/projects", "isActive": false },
-      { "label": "Faqs", "href": "/faq", "isActive": false },
-      { "label": "Blog", "href": "/blog", "isActive": false }
-    ],
-    "ctaButton": {
-      "label": "Contact",
-      "href": "/contact",
-      "showArrow": true
-    }
-  },
-  "heroBanner": {
-    "badge": "CLEAN  •  RENEWABLE  •  SUSTAINABLE",
-    "titleLine1": "ENERGY IS",
-    "titleLine2": "FUTURE BRIGHT.",
-    "description": "Switch to solar energy and create a cleaner, greener and brighter tomorrow.",
-    "ctaButton": {
-      "label": "Contact",
-      "href": "/contact",
-      "showArrow": true
-    },
-    "backgroundImage": "/images/Hero-banner.png"
-  },
-  "aboutUs": {
-    "badge": "About Us",
-    "title": "Building a Sustainable Future",
-    "paragraphs": [
-      "At SunAviora, we are committed to delivering clean, reliable and innovative solar energy solutions for a brighter and greener tomorrow. We help homes, businesses and industries harness the power of the sun to reduce energy costs and create a cleaner environment.",
-      "With a focus on quality, innovation and customer satisfaction, our experienced team designs and installs customized solar systems that deliver long-term value and support a more sustainable future across India."
-    ],
-    "ctaButton": {
-      "label": "About Us",
-      "href": "/about",
-      "showArrow": true
-    },
-    "images": {
-      "topImage": "/images/Hero-banner.png",
-      "bottomImage": "/images/Hero-banner.png"
-    }
-  },
-  "sectionHeader": {
-    "subtitle": "Our Services",
-    "titlePrefix": "Complete ",
-    "titleHighlight": "Renewable Energy",
-    "titleSuffix": " Solutions",
-    "description": "We provide end-to-end solar energy solutions to make clean, reliable and affordable power accessible for homes, businesses and industries."
-  },
-  "services": [
-    {
-      "id": "solar-panel-installation",
-      "title": "Solar Panel Installation",
-      "description": "Expert installation of high-efficiency solar panels for residential, commercial and industrial projects.",
-      "image": "/images/sun-aviora_01.jpg",
-      "theme": "green",
-      "icon": "Sun"
-    },
-    {
-      "id": "energy-storage-solutions",
-      "title": "Energy Storage Solutions",
-      "description": "Advanced battery storage systems to store excess energy and ensure uninterrupted power supply.",
-      "image": "/images/sun-aviora_02.jpg",
-      "theme": "yellow",
-      "icon": "Zap"
-    },
-    {
-      "id": "operation-maintenance",
-      "title": "Operation & Maintenance",
-      "description": "Regular monitoring, cleaning and maintenance to keep your solar system running at peak performance.",
-      "image": "/images/sun-aviora_03.jpg",
-      "theme": "green",
-      "icon": "Wrench"
-    },
-    {
-      "id": "consultation-planning",
-      "title": "Consultation & Planning",
-      "description": "Expert consultation and custom solar solutions tailored to your energy needs and budget.",
-      "image": "/images/sun-aviora_04.jpg",
-      "theme": "yellow",
-      "icon": "Users"
-    }
-  ],
-  "statsSection": {
-    "backgroundImage": "/images/Hero-banner.png",
-    "stats": [
-      {
-        "id": "projects",
-        "value": 850,
-        "suffix": "+",
-        "label": "Solar Projects Completed",
-        "icon": "Solar"
-      },
-      {
-        "id": "clients",
-        "value": 1.5,
-        "suffix": "K+",
-        "isDecimal": true,
-        "label": "Happy Clients",
-        "icon": "Clients"
-      },
-      {
-        "id": "team",
-        "value": 120,
-        "suffix": "+",
-        "label": "Expert Team Members",
-        "icon": "Engineer"
-      },
-      {
-        "id": "awards",
-        "value": 50,
-        "suffix": "+",
-        "label": "Awards & Recognition",
-        "icon": "Trophy"
-      }
-    ]
-  },
-  "whyChooseUs": {
-    "badge": "Why Choose Us",
-    "titlePrefix": "Your Trusted Partner for a ",
-    "titleHighlight": "Brighter, Greener Tomorrow",
-    "description": "We are committed to delivering reliable, efficient and sustainable solar energy solutions tailored to your needs. Our focus is on quality, innovation and customer satisfaction in every project we undertake.",
-    "images": {
-      "largeImage": "/images/sun-aviora_05.jpg",
-      "smallImage": "/images/sun-aviora_06.jpg"
-    },
-    "features": [
-      {
-        "id": "cost-effective",
-        "title": "Cost-Effective Solutions",
-        "description": "We provide high-quality solar systems that help you save on electricity bills with long-term benefits.",
-        "icon": "Currency"
-      },
-      {
-        "id": "expert-team",
-        "title": "Expert & Experienced Team",
-        "description": "Our skilled professionals ensure seamless installation and support from start to finish.",
-        "icon": "Gear"
-      },
-      {
-        "id": "sustainable-energy",
-        "title": "Sustainable & Reliable Energy",
-        "description": "We focus on clean, renewable energy solutions for a healthier planet and a brighter future.",
-        "icon": "Leaf"
-      }
-    ]
-  },
-  "latestProjects": {
-    "badge": "Our Projects",
-    "titlePrefix": "Our Latest ",
-    "titleHighlight": "Projects",
-    "description": "Explore our recent solar energy projects that are helping homes, businesses and industries move towards a cleaner and more sustainable future.",
-    "projects": [
-      {
-        "id": "residential",
-        "category": "RESIDENTIAL",
-        "title": "Rooftop Solar Project",
-        "description": "Clean energy for modern homes.",
-        "image": "/images/sun-aviora_07.jpg",
-        "icon": "Home"
-      },
-      {
-        "id": "commercial",
-        "category": "COMMERCIAL",
-        "title": "Business Solar Solution",
-        "description": "Reliable power for growing businesses.",
-        "image": "/images/sun-aviora_08.jpg",
-        "icon": "Building"
-      },
-      {
-        "id": "solar-farm",
-        "category": "SOLAR FARM",
-        "title": "Ground Mount Project",
-        "description": "Sustainable energy on a larger scale.",
-        "image": "/images/Solar-farm.png",
-        "icon": "Plant"
-      },
-      {
-        "id": "energy-storage",
-        "category": "ENERGY STORAGE",
-        "title": "Solar + Storage System",
-        "description": "Stable and uninterrupted power.",
-        "image": "/images/sun-aviora_09.jpg",
-        "icon": "Battery"
-      }
-    ]
-  },
-  "testimonials": {
-    "badge": "What Our Clients Say",
-    "titlePrefix": "Real Experiences, ",
-    "titleHighlight": "Real Impact",
-    "description": "We take pride in delivering reliable solar energy solutions. Here's what our clients have to say about their experience with SunAviora.",
-    "leftImage": "/images/sun-aviora_10.jpg",
-    "imageBadge": {
-      "text": "Clean Energy\nfor a Better Tomorrow"
-    },
-    "reviews": [
-      {
-        "id": "1",
-        "text": "“SunAviora provided an excellent solar installation for our home. The team was professional, on time, and guided us throughout the process. We've already noticed a big reduction in our electricity bills.”",
-        "author": "Rohit Sharma",
-        "designation": "Homeowner, New Delhi",
-        "avatar": "/images/sun-aviora_11.jpg",
-        "rating": 5
-      },
-      {
-        "id": "2",
-        "text": "“Highly professional team and great service. They helped us choose the right solar solution for our business needs. The entire process was smooth and hassle-free. Truly a trusted partner!”",
-        "author": "Neha Verma",
-        "designation": "Business Owner, Noida",
-        "avatar": "/images/sun-aviora_12.jpg",
-        "rating": 5
-      },
-      {
-        "id": "3",
-        "text": "“From consultation to installation, everything was handled with great care. The quality of work and customer support is outstanding. I highly recommend SunAviora for anyone looking for solar energy solutions.”",
-        "author": "Amit Kumar",
-        "designation": "Factory Owner, Gurgaon",
-        "avatar": "/images/sun-aviora_11.jpg",
-        "rating": 5
-      },
-      {
-        "id": "4",
-        "text": "“Switching to solar was the best decision for our commercial property. SunAviora designed the perfect system that exceeded our expectations in terms of both ROI and performance.”",
-        "author": "Pooja Malhotra",
-        "designation": "Retail Chain Owner, Delhi",
-        "avatar": "/images/sun-aviora_12.jpg",
-        "rating": 5
-      }
-    ]
-  },
-  "blogSection": {
-    "badge": "Latest Blog Post",
-    "titlePrefix": "Stay Updated on ",
-    "titleHighlight": "Solar Energy Insights",
-    "description": "Explore our latest blog posts to learn about solar energy, industry trends, tips and innovations that help you make a cleaner and brighter future.",
-    "posts": [
-      {
-        "id": "demand-2025",
-        "date": "February 23, 2025",
-        "category": "Solar",
-        "title": "The Growing Demand for Solar Energy in 2025",
-        "description": "Discover why more homes and businesses are switching to solar energy and how it is shaping a cleaner, greener future.",
-        "image": "/images/sun-aviora_01.jpg",
-        "href": "/blog/demand-2025"
-      },
-      {
-        "id": "installation-guide",
-        "date": "February 20, 2025",
-        "category": "Installation",
-        "title": "A Complete Guide to Solar Panel Installation",
-        "description": "Learn the step-by-step process of solar panel installation and what to consider before going solar.",
-        "image": "/images/sun-aviora_06.jpg",
-        "href": "/blog/installation-guide"
-      },
-      {
-        "id": "environmental-benefits",
-        "date": "February 18, 2025",
-        "category": "Renewable",
-        "title": "How Solar Energy Benefits the Environment",
-        "description": "Explore the key environmental benefits of solar energy and how it helps reduce carbon emissions for a healthier planet.",
-        "image": "/images/Solar-farm.png",
-        "href": "/blog/environmental-benefits"
-      },
-      {
-        "id": "maximize-savings",
-        "date": "February 15, 2025",
-        "category": "Tips",
-        "title": "Top Tips to Maximize Your Solar Energy Savings",
-        "description": "Simple and effective tips to get the most out of your solar system and reduce your electricity bills.",
-        "image": "/images/sun-aviora_07.jpg",
-        "href": "/blog/maximize-savings"
-      }
-    ]
-  },
-  "footer": {
-    "logo": {
-      "src": "/images/footer_logo.png",
-      "alt": "SunAviora - Powering a Greener Future",
-      "href": "/"
-    },
-    "aboutText": "At SunAviora, we are committed to providing reliable and innovative solar energy solutions to help homes, businesses and industries move towards a cleaner and more sustainable tomorrow.",
-    "quickLinks": {
-      "title": "Quick Links",
-      "links": [
-        { "label": "About Us", "href": "/about" },
-        { "label": "Our Services", "href": "/services" },
-        { "label": "Gallery", "href": "/gallery" },
-        { "label": "Blog", "href": "/blog" },
-        { "label": "Contact Us", "href": "/contact" }
-      ]
-    },
-    "ourServices": {
-      "title": "Our Services",
-      "links": [
-        { "label": "Solar Panel Installation", "href": "/services" },
-        { "label": "Energy Storage Solutions", "href": "/services" },
-        { "label": "Operation & Maintenance", "href": "/services" },
-        { "label": "Consultation & Planning", "href": "/services" },
-        { "label": "Solar System Upgrades", "href": "/services" },
-        { "label": "Commercial Solar Solutions", "href": "/services" }
-      ]
-    },
-    "contact": {
-      "title": "Get In Touch",
-      "address": {
-        "title": "Our Address",
-        "lines": ["123 Sun Valley Blvd,", "Los Angeles, CA 90001, USA"]
-      },
-      "phone": {
-        "title": "Call Us",
-        "value": "+1 00000 00000"
-      },
-      "email": {
-        "title": "Mail Us",
-        "value": "info@xyz.com"
-      }
-    },
-    "socials": [
-      { "platform": "facebook", "href": "https://www.facebook.com" },
-      { "platform": "twitter", "href": "https://www.twitter.com" },
-      { "platform": "instagram", "href": "https://www.instagram.com" },
-      { "platform": "linkedin", "href": "https://www.linkedin.com" },
-      { "platform": "youtube", "href": "https://www.youtube.com" }
-    ],
-    "copyright": " Copyright @ 2026. All Rights Reserved.Powered By Lestow "
-  },
-  "faqPage": {
-    "banner": {
-      "title": "Faq",
-      "breadcrumbs": [{ "label": "Home", "href": "/" }, { "label": "Faq" }]
-    },
-    "leftCard": {
-      "badge": "FAQ",
-      "titleLine1": "The Answers",
-      "titleLine2": "You Need for a",
-      "titleHighlight": "Greener Future",
-      "description": "Get clear answers to your questions about solar energy, installation, savings and maintenance.",
-      "image": "/images/Solar-farm.png"
-    },
-    "rightSection": {
-      "badge": "FAQs",
-      "titlePrefix": "Frequently Asked ",
-      "titleHighlight": "Questions",
-      "description": "Find answers to the most common questions about our solar solutions, installation process, cost savings and more.",
-      "faqs": [
-        {
-          "id": "1",
-          "question": "How do solar panels work?",
-          "answer": "Solar panels convert sunlight into electricity using photovoltaic (PV) cells. When sunlight hits the panels, it generates direct current (DC) electricity, which is then converted into usable alternating current (AC) for your home or business."
-        },
-        {
-          "id": "2",
-          "question": "What are the benefits of installing solar panels?",
-          "answer": "Installing solar panels lowers electricity bills, provides clean renewable energy, reduces carbon emissions, increases property value, and offers protection against rising utility tariffs."
-        },
-        {
-          "id": "3",
-          "question": "How much can I save with solar energy?",
-          "answer": "Depending on your electricity usage, roof size, and location, most homeowners and businesses save between 60% to 90% on their ongoing monthly power bills."
-        },
-        {
-          "id": "4",
-          "question": "How long does the installation process take?",
-          "answer": "Residential installations typically take 2-5 days once permits and site approvals are cleared, while larger commercial projects take 1 to 3 weeks depending on the system size."
-        },
-        {
-          "id": "5",
-          "question": "Do solar panels require a lof maiot ntenance?",
-          "answer": "No, solar panels require minimal maintenance. Occasional cleaning with water to remove dust and debris along with an annual routine check is generally all that is needed."
+  "categories": {
+    "SunAviora": {
+      "templateComponents": {
+        "template-1": {
+          "shared": {
+            "Header": "SunAvioraHeader1",
+            "Footer": "SunAvioraFooter1"
+          },
+          "pages": {
+            "home": {
+              "components": [
+                {
+                  "key": "Hero",
+                  "component": "SunAvioraHeroBanner1"
+                },
+                {
+                  "key": "About",
+                  "component": "SunAvioraAboutUs1"
+                },
+                {
+                  "key": "Services",
+                  "component": "SunAvioraServices1"
+                },
+                {
+                  "key": "Stats",
+                  "component": "SunAvioraStats1"
+                },
+                {
+                  "key": "WhyChooseUs",
+                  "component": "SunAvioraWhyChooseUs1"
+                },
+                {
+                  "key": "Projects",
+                  "component": "SunAvioraProjects1"
+                },
+                {
+                  "key": "Testimonials",
+                  "component": "SunAvioraTestimonials1"
+                },
+                {
+                  "key": "Blog",
+                  "component": "SunAvioraBlogNews1"
+                }
+              ]
+            }
+          }
         }
-      ]
-    }
-  },
-  "contactPage": {
-    "banner": {
-      "title": "Contact Us",
-      "breadcrumbs": [
-        { "label": "Home", "href": "/" },
-        { "label": "Contact Us" }
-      ]
-    },
-    "header": {
-      "badge": "Contact Us",
-      "titlePrefix": "Get in Touch ",
-      "titleHighlight": "With Us",
-      "description": "Have questions about our solar solutions? Our team is here to help. Feel free to reach out and we'll get back to you soon."
-    },
-    "infoCard": {
-      "badge": "GET IN TOUCH",
-      "titleLine1": "Let's Build a",
-      "titleHighlight": "Cleaner Tomorrow",
-      "description": "Reach out to our team for solar installation, consultation or any queries. We're always ready to help you.",
-      "location": {
-        "title": "Our Location",
-        "value": "123 Sun Valley Blvd, Suite 400, Los Angeles, CA 90001, USA"
       },
-      "phone": {
-        "title": "Call Us",
-        "value": "+1 00000 00000"
-      },
-      "email": {
-        "title": "Email Us",
-        "value": "info@xyz.com"
-      },
-      "socials": [
-        { "platform": "facebook", "href": "https://www.facebook.com" },
-        { "platform": "twitter", "href": "https://www.twitter.com" },
-        { "platform": "instagram", "href": "https://www.instagram.com" },
-        { "platform": "linkedin", "href": "https://www.linkedin.com" },
-        { "platform": "youtube", "href": "https://www.youtube.com" }
-      ]
-    },
-    "form": {
-      "badge": "SEND A MESSAGE",
-      "titlePrefix": "Request a ",
-      "titleHighlight": "Free Consultation",
-      "description": "Fill out the form below and our team will get back to you shortly.",
-      "submitButton": "Send Message"
-    },
-    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.83923192776!2d77.0688975472578!3d28.52728034389636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-  },
-  "blogPage": {
-    "banner": {
-      "title": "Blog",
-      "breadcrumbs": [{ "label": "Home", "href": "/" }, { "label": "Blog" }]
-    },
-    "header": {
-      "badge": "Latest Blog Post",
-      "titlePrefix": "Stay Updated on ",
-      "titleHighlight": "Solar Energy Insights",
-      "description": "Discover the latest news, tips and industry trends about solar energy, renewable solutions and a greener future for homes and businesses."
-    },
-    "posts": [
-      {
-        "id": "benefits-for-home",
-        "date": "February 25, 2025",
-        "category": "Residential",
-        "title": "Benefits of Solar Energy for Your Home",
-        "description": "Learn how solar energy can reduce your electricity bills and create a cleaner, healthier home environment.",
-        "image": "/images/sun-aviora_01.jpg",
-        "href": "/blog/benefits-for-home"
-      },
-      {
-        "id": "guide-installation",
-        "date": "February 22, 2025",
-        "category": "Installation",
-        "title": "A Complete Guide to Solar Panel Installation",
-        "description": "Step-by-step guide to solar panel installation, including planning, process and key factors to consider.",
-        "image": "/images/sun-aviora_06.jpg",
-        "href": "/blog/guide-installation"
-      },
-      {
-        "id": "environment-benefits",
-        "date": "February 18, 2025",
-        "category": "Solar Farm",
-        "title": "How Solar Energy Benefits the Environment",
-        "description": "Explore how solar power helps reduce carbon emissions and supports a cleaner and more sustainable planet.",
-        "image": "/images/Solar-farm.png",
-        "href": "/blog/environment-benefits"
-      },
-      {
-        "id": "solar-vs-wind",
-        "date": "February 15, 2025",
-        "category": "Renewable",
-        "title": "Solar vs Wind Energy: Which is Right for You?",
-        "description": "Compare solar and wind energy to understand their advantages and choose the best solution for your needs.",
-        "image": "/images/sun-aviora_08.jpg",
-        "href": "/blog/solar-vs-wind"
-      },
-      {
-        "id": "essential-maintenance-tips",
-        "date": "February 10, 2025",
-        "category": "Maintenance",
-        "title": "Essential Tips for Solar Panel Maintenance",
-        "description": "Keep your solar system running at peak efficiency with these simple maintenance tips and best practices.",
-        "image": "/images/sun-aviora_03.jpg",
-        "href": "/blog/essential-maintenance-tips"
-      },
-      {
-        "id": "future-battery-storage",
-        "date": "February 05, 2025",
-        "category": "Technology",
-        "title": "The Future of Solar Energy and Battery Storage",
-        "description": "Discover how advanced battery storage solutions are shaping the future of reliable and efficient solar power.",
-        "image": "/images/sun-aviora_02.jpg",
-        "href": "/blog/future-battery-storage"
-      }
-    ]
-  },
-  "blogDetailSidebar": {
-    "categories": [
-      {
-        "name": "Solar Installation",
-        "category": "Installation",
-        "count": "08",
-        "targetId": "guide-installation"
-      },
-      {
-        "name": "Solar Maintenance",
-        "category": "Maintenance",
-        "count": "06",
-        "targetId": "essential-maintenance-tips"
-      },
-      {
-        "name": "Renewable Energy",
-        "category": "Renewable",
-        "count": "10",
-        "targetId": "solar-vs-wind"
-      },
-      {
-        "name": "Residential Solar",
-        "category": "Residential",
-        "count": "05",
-        "targetId": "benefits-for-home"
-      },
-      {
-        "name": "Solar Technology",
-        "category": "Technology",
-        "count": "07",
-        "targetId": "future-battery-storage"
-      },
-      {
-        "name": "Solar Farm",
-        "category": "Solar Farm",
-        "count": "04",
-        "targetId": "environment-benefits"
-      }
-    ],
-    "recentPosts": [
-      {
-        "id": "solar-vs-wind",
-        "title": "Solar vs Wind Energy: Which is Right for You?",
-        "date": "February 15, 2025",
-        "image": "/images/sun-aviora_08.jpg",
-        "href": "/blog/solar-vs-wind"
-      },
-      {
-        "id": "guide-installation",
-        "title": "A Complete Guide to Solar Panel Installation",
-        "date": "February 22, 2025",
-        "image": "/images/sun-aviora_06.jpg",
-        "href": "/blog/guide-installation"
-      },
-      {
-        "id": "environment-benefits",
-        "title": "How Solar Energy Benefits the Environment",
-        "date": "February 18, 2025",
-        "image": "/images/Solar-farm.png",
-        "href": "/blog/environment-benefits"
-      },
-      {
-        "id": "benefits-for-home",
-        "title": "Top Tips to Maximize Your Solar Energy Savings",
-        "date": "February 15, 2025",
-        "image": "/images/sun-aviora_01.jpg",
-        "href": "/blog/benefits-for-home"
-      }
-    ]
-  },
-  "servicesPage": {
-    "banner": {
-      "title": "Our Services",
-      "breadcrumbs": [
-        { "label": "Home", "href": "/" },
-        { "label": "Our Services" }
-      ]
-    },
-    "header": {
-      "badge": "WHAT WE OFFER",
-      "titlePrefix": "Reliable & Sustainable ",
-      "titleHighlight": "Solar Services",
-      "description": "We offer complete end-to-end solar engineering, installation, battery storage and lifetime maintenance services across residential, commercial and industrial sectors."
-    },
-    "services": [
-      {
-        "id": "solar-panel-installation",
-        "title": "Solar Panel Installation",
-        "description": "Expert rooftop and ground mount solar system design and installation with top-tier photovoltaic panels.",
-        "image": "/images/sun-aviora_01.jpg",
-        "theme": "green",
-        "icon": "Sun"
-      },
-      {
-        "id": "energy-storage-solutions",
-        "title": "Energy Storage Solutions",
-        "description": "High-capacity smart lithium battery banks to keep your home or commercial enterprise powered 24/7 without grid reliance.",
-        "image": "/images/sun-aviora_02.jpg",
-        "theme": "yellow",
-        "icon": "Zap"
-      },
-      {
-        "id": "operation-maintenance",
-        "title": "Operation & Maintenance",
-        "description": "Proactive preventative maintenance, automated solar panel cleaning, and health diagnostics to maximize yield.",
-        "image": "/images/sun-aviora_03.jpg",
-        "theme": "green",
-        "icon": "Wrench"
-      },
-      {
-        "id": "consultation-planning",
-        "title": "Consultation & Planning",
-        "description": "Comprehensive site feasibility analysis, ROI calculations, and custom engineering blueprints tailored to your budget.",
-        "image": "/images/sun-aviora_04.jpg",
-        "theme": "yellow",
-        "icon": "Users"
-      },
-      {
-        "id": "commercial-solar",
-        "title": "Commercial & Industrial Solar",
-        "description": "High-capacity MW-scale solar setups engineered for factories, hospitals, IT parks and educational campuses.",
-        "image": "/images/Solar-farm.png",
-        "theme": "green",
-        "icon": "Sun"
-      },
-      {
-        "id": "solar-system-upgrades",
-        "title": "Solar System Upgrades",
-        "description": "Upgrade existing inverters, add bifacial panels or integrate hybrid battery systems to double your energy generation.",
-        "image": "/images/sun-aviora_05.jpg",
-        "theme": "yellow",
-        "icon": "Zap"
-      },
-      {
-        "id": "solar-monitoring",
-        "title": "Smart Solar Monitoring",
-        "description": "Real-time IoT cloud monitoring software tracking electricity generation, consumption patterns and fault detection.",
-        "image": "/images/sun-aviora_06.jpg",
-        "theme": "green",
-        "icon": "Wrench"
-      },
-      {
-        "id": "solar-financing-subsidy",
-        "title": "Government Subsidy & Liaison",
-        "description": "Complete guidance and end-to-end liaison support for government PM Surya Ghar subsidies and net metering approvals.",
-        "image": "/images/sun-aviora_07.jpg",
-        "theme": "yellow",
-        "icon": "Users"
-      }
-    ]
-  },
-  "serviceDetailData": {
-    "sidebarList": [
-      { "id": "solar-installation", "name": "Solar Installation" },
-      { "id": "solar-maintenance", "name": "Solar Maintenance" },
-      {
-        "id": "inverter-battery-solutions",
-        "name": "Inverter & Battery Solutions"
-      },
-      { "id": "solar-consultation", "name": "Solar Consultation" },
-      { "id": "commercial-solar", "name": "Commercial Solar" },
-      { "id": "residential-solar", "name": "Residential Solar" },
-      { "id": "solar-water-heating", "name": "Solar Water Heating" },
-      { "id": "hybrid-wind-solar", "name": "Hybrid Wind & Solar" }
-    ],
-    "defaultService": {
-      "id": "hybrid-wind-solar",
-      "badge": "Our Service",
-      "titlePrefix": "Hybrid ",
-      "titleHighlight": "Wind & Solar Solutions",
-      "mainImage": "/images/Solar-farm.png",
-      "tagline": "A smarter energy solution that combines the power of wind and solar to ensure continuous, reliable and clean electricity for your home or business.",
-      "description": "Hybrid wind and solar systems use both solar panels and wind turbines to generate electricity. When the sun isn't shining, wind power helps keep your system running. This combination provides a stable and efficient energy supply throughout the year, even in changing weather conditions, making it a perfect choice for areas with variable sunlight and consistent wind.",
-      "subImages": ["/images/sun-aviora_01.jpg", "/images/sun-aviora_03.jpg"],
-      "deliverySection": {
-        "titlePrefix": "How We Deliver ",
-        "titleHighlight": "Hybrid Solutions",
-        "description": "We follow a simple and well-planned process to design and install a hybrid wind and solar system that meets your energy needs.",
-        "steps": [
-          {
-            "id": "1",
-            "icon": "FileText",
-            "title": "Site Analysis",
-            "description": "We assess your location, wind speed, sunlight availability and energy needs."
-          },
-          {
-            "id": "2",
-            "icon": "Gear",
-            "title": "Custom System Design",
-            "description": "Our experts design a hybrid system that maximizes efficiency and performance."
-          },
-          {
-            "id": "3",
-            "icon": "Wrench",
-            "title": "Professional Installation",
-            "description": "We install high-quality solar panels and wind turbines with advanced technology."
-          },
-          {
-            "id": "4",
-            "icon": "Headphones",
-            "title": "Ongoing Support",
-            "description": "We provide regular monitoring, maintenance and support for long-term reliability."
+      "sections": {
+        "Global": {
+          "variants": {
+            "SunAvioraGlobal1": {
+              "companyName": "SunAviora",
+              "logo": {
+                "src": "/images/logo (1).png",
+                "alt": "SunAviora - Powering a Greener Future",
+                "href": "/"
+              },
+              "footerLogo": {
+                "src": "/images/footer_logo.png",
+                "alt": "SunAviora - Powering a Greener Future",
+                "href": "/"
+              },
+              "contact": {
+                "address": "123 Sun Valley Blvd,\nLos Angeles, CA 90001, USA",
+                "phone": "+1 00000 00000",
+                "email": "info@xyz.com"
+              },
+              "socials": [
+                {
+                  "name": "Facebook",
+                  "url": "https://www.facebook.com",
+                  "icon": "facebook"
+                },
+                {
+                  "name": "Twitter",
+                  "url": "https://www.twitter.com",
+                  "icon": "twitter"
+                },
+                {
+                  "name": "Instagram",
+                  "url": "https://www.instagram.com",
+                  "icon": "instagram"
+                },
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com",
+                  "icon": "linkedin"
+                },
+                {
+                  "name": "YouTube",
+                  "url": "https://www.youtube.com",
+                  "icon": "youtube"
+                }
+              ]
+            }
           }
-        ]
-      },
-      "whyChoose": {
-        "titlePrefix": "Why Choose Our ",
-        "titleHighlight": "Hybrid Wind & Solar Service?",
-        "description": "Our hybrid systems offer the perfect blend of solar and wind energy, giving you a reliable, cost-effective and sustainable power solution for a brighter tomorrow.",
-        "cards": [
-          {
-            "id": "1",
-            "icon": "Leaf",
-            "title": "Continuous Power Supply",
-            "description": "Generate electricity even when sunlight is low by using wind energy."
-          },
-          {
-            "id": "2",
-            "icon": "Currency",
-            "title": "Lower Electricity Bills",
-            "description": "Reduce your dependence on grid power and save on energy costs."
-          },
-          {
-            "id": "3",
-            "icon": "Gear",
-            "title": "Eco-Friendly Energy",
-            "description": "Clean and renewable energy that helps reduce carbon emissions."
-          },
-          {
-            "id": "4",
-            "icon": "BarChart",
-            "title": "Higher Energy Efficiency",
-            "description": "Combined solar and wind power maximizes energy generation throughout the year."
-          },
-          {
-            "id": "5",
-            "icon": "ShieldCheck",
-            "title": "Reliable in All Weather",
-            "description": "Works efficiently in different weather conditions, ensuring stable power supply."
-          },
-          {
-            "id": "6",
-            "icon": "Plant",
-            "title": "Ideal for Remote Areas",
-            "description": "A great solution for locations with limited grid access."
+        },
+        "Header": {
+          "variants": {
+            "SunAvioraHeader1": {
+              "topBar": {
+                "visible": true,
+                "backgroundColor": "#0c4e4b"
+              },
+              "logo": {
+                "src": "/images/logo (1).png",
+                "alt": "SunAviora - Powering a Greener Future",
+                "href": "/"
+              },
+              "menu": [
+                {
+                  "label": "Home",
+                  "href": "/",
+                  "isActive": true
+                },
+                {
+                  "label": "About",
+                  "href": "/about",
+                  "isActive": false
+                },
+                {
+                  "label": "Services",
+                  "href": "/services",
+                  "isActive": false
+                },
+                {
+                  "label": "Projects",
+                  "href": "/projects",
+                  "isActive": false
+                },
+                {
+                  "label": "Faqs",
+                  "href": "/faq",
+                  "isActive": false
+                },
+                {
+                  "label": "Blog",
+                  "href": "/blog",
+                  "isActive": false
+                }
+              ],
+              "cta": {
+                "label": "Contact",
+                "href": "/contact",
+                "showArrow": true
+              }
+            }
           }
-        ]
-      }
-    }
-  },
-  "projectsPage": {
-    "banner": {
-      "title": "Our Projects",
-      "breadcrumbs": [
-        { "label": "Home", "href": "/" },
-        { "label": "Our Projects" }
-      ]
-    },
-    "header": {
-      "badge": "OUR PORTFOLIO",
-      "titlePrefix": "Explore Our Latest ",
-      "titleHighlight": "Solar Projects",
-      "description": "Discover how our residential, commercial, industrial and utility-scale solar projects are transforming clean energy generation across the country."
-    },
-    "projects": [
-      {
-        "id": "1",
-        "category": "RESIDENTIAL",
-        "title": "Rooftop Solar Project",
-        "description": "Clean energy for modern homes.",
-        "image": "/images/sun-aviora_01.jpg",
-        "icon": "Home"
-      },
-      {
-        "id": "2",
-        "category": "COMMERCIAL",
-        "title": "Business Solar Solution",
-        "description": "Reliable power for growing businesses.",
-        "image": "/images/sun-aviora_08.jpg",
-        "icon": "Building"
-      },
-      {
-        "id": "3",
-        "category": "SOLAR FARM",
-        "title": "Ground Mount Project",
-        "description": "Sustainable energy on a larger scale.",
-        "image": "/images/Solar-farm.png",
-        "icon": "Plant"
-      },
-      {
-        "id": "4",
-        "category": "ENERGY STORAGE",
-        "title": "Solar + Storage System",
-        "description": "Stable and uninterrupted power.",
-        "image": "/images/sun-aviora_09.jpg",
-        "icon": "Battery"
-      },
-      {
-        "id": "5",
-        "category": "INDUSTRIAL",
-        "title": "Factory Solar Setup",
-        "description": "High-yield power for industrial units.",
-        "image": "/images/sun-aviora_05.jpg",
-        "icon": "Building"
-      },
-      {
-        "id": "6",
-        "category": "AGRICULTURE",
-        "title": "Solar Water Pump Project",
-        "description": "Efficient irrigation for rural farms.",
-        "image": "/images/sun-aviora_06.jpg",
-        "icon": "Plant"
-      },
-      {
-        "id": "7",
-        "category": "INSTITUTIONAL",
-        "title": "Campus Green Energy",
-        "description": "Sustainable electricity for colleges.",
-        "image": "/images/sun-aviora_07.jpg",
-        "icon": "Home"
-      },
-      {
-        "id": "8",
-        "category": "HYBRID WIND-SOLAR",
-        "title": "Hybrid Grid Project",
-        "description": "Combined dual-source generation.",
-        "image": "/images/Solar-farm.png",
-        "icon": "Battery"
-      }
-    ]
-  },
-  "projectDetailData": {
-    "banner": {
-      "title": "Project Detail",
-      "breadcrumbs": [
-        { "label": "Home", "href": "/" },
-        { "label": "Project Detail" }
-      ]
-    },
-    "heroSection": {
-      "image": "/images/Solar-farm.png",
-      "specCard": {
-        "titlePrefix": "Project Features & ",
-        "titleHighlight": "Specifications",
-        "specs": [
-          {
-            "icon": "Folder",
-            "label": "Project Name:",
-            "value": "Solar Power Plant Installation"
-          },
-          {
-            "icon": "MapPin",
-            "label": "Location:",
-            "value": "Jaipur, Rajasthan, India"
-          },
-          { "icon": "Zap", "label": "Capacity:", "value": "50 MW" },
-          { "icon": "Grid", "label": "Number of Panels:", "value": "1,20,000" },
-          {
-            "icon": "Layers",
-            "label": "Panel Type:",
-            "value": "Monocrystalline Solar Panels"
-          },
-          { "icon": "Server", "label": "Inverter Capacity:", "value": "50 MW" },
-          {
-            "icon": "Leaf",
-            "label": "CO₂ Reduction:",
-            "value": "~ 70,000 Tons/Year"
-          },
-          {
-            "icon": "Clock",
-            "label": "Installation Time:",
-            "value": "6 Months"
+        },
+        "PageBanners": {
+          "variants": {
+            "SunAvioraPageBanners1": {
+              "pages": {
+                "faq": {
+                  "title": "Faq",
+                  "breadcrumbs": [
+                    {
+                      "label": "Home",
+                      "href": "/"
+                    },
+                    {
+                      "label": "Faq"
+                    }
+                  ]
+                },
+                "contact": {
+                  "title": "Contact Us",
+                  "breadcrumbs": [
+                    {
+                      "label": "Home",
+                      "href": "/"
+                    },
+                    {
+                      "label": "Contact Us"
+                    }
+                  ]
+                },
+                "blog": {
+                  "title": "Blog",
+                  "breadcrumbs": [
+                    {
+                      "label": "Home",
+                      "href": "/"
+                    },
+                    {
+                      "label": "Blog"
+                    }
+                  ]
+                },
+                "services": {
+                  "title": "Our Services",
+                  "breadcrumbs": [
+                    {
+                      "label": "Home",
+                      "href": "/"
+                    },
+                    {
+                      "label": "Our Services"
+                    }
+                  ]
+                },
+                "projects": {
+                  "title": "Our Projects",
+                  "breadcrumbs": [
+                    {
+                      "label": "Home",
+                      "href": "/"
+                    },
+                    {
+                      "label": "Our Projects"
+                    }
+                  ]
+                },
+                "projectDetail": {
+                  "title": "Project Detail",
+                  "breadcrumbs": [
+                    {
+                      "label": "Home",
+                      "href": "/"
+                    },
+                    {
+                      "label": "Project Detail"
+                    }
+                  ]
+                }
+              }
+            }
           }
-        ]
+        },
+        "HeroBanner": {
+          "variants": {
+            "SunAvioraHeroBanner1": {
+              "badge": "CLEAN  •  RENEWABLE  •  SUSTAINABLE",
+              "heading": {
+                "main": "ENERGY IS",
+                "highlight": "FUTURE BRIGHT."
+              },
+              "description": "Switch to solar energy and create a cleaner, greener and brighter tomorrow.",
+              "cta": {
+                "label": "Contact",
+                "href": "/contact",
+                "showArrow": true
+              },
+              "backgroundImage": "/images/Hero-banner.png"
+            }
+          }
+        },
+        "AboutUs": {
+          "variants": {
+            "SunAvioraAboutUs1": {
+              "badge": "About Us",
+              "heading": {
+                "main": "Building a Sustainable Future"
+              },
+              "paragraphs": [
+                "At SunAviora, we are committed to delivering clean, reliable and innovative solar energy solutions for a brighter and greener tomorrow. We help homes, businesses and industries harness the power of the sun to reduce energy costs and create a cleaner environment.",
+                "With a focus on quality, innovation and customer satisfaction, our experienced team designs and installs customized solar systems that deliver long-term value and support a more sustainable future across India."
+              ],
+              "cta": {
+                "label": "About Us",
+                "href": "/about",
+                "showArrow": true
+              },
+              "images": {
+                "top": "/images/Hero-banner.png",
+                "bottom": "/images/Hero-banner.png"
+              }
+            }
+          }
+        },
+        "Services": {
+          "variants": {
+            "SunAvioraServices1": {
+              "badge": "Our Services",
+              "heading": {
+                "main": "Complete ",
+                "highlight": "Renewable Energy",
+                "end": " Solutions"
+              },
+              "description": "We provide end-to-end solar energy solutions to make clean, reliable and affordable power accessible for homes, businesses and industries.",
+              "list": [
+                {
+                  "id": "solar-panel-installation",
+                  "title": "Solar Panel Installation",
+                  "description": "Expert installation of high-efficiency solar panels for residential, commercial and industrial projects.",
+                  "image": "/images/sun-aviora_01.jpg",
+                  "theme": "green",
+                  "icon": "Sun"
+                },
+                {
+                  "id": "energy-storage-solutions",
+                  "title": "Energy Storage Solutions",
+                  "description": "Advanced battery storage systems to store excess energy and ensure uninterrupted power supply.",
+                  "image": "/images/sun-aviora_02.jpg",
+                  "theme": "yellow",
+                  "icon": "Zap"
+                },
+                {
+                  "id": "operation-maintenance",
+                  "title": "Operation & Maintenance",
+                  "description": "Regular monitoring, cleaning and maintenance to keep your solar system running at peak performance.",
+                  "image": "/images/sun-aviora_03.jpg",
+                  "theme": "green",
+                  "icon": "Wrench"
+                },
+                {
+                  "id": "consultation-planning",
+                  "title": "Consultation & Planning",
+                  "description": "Expert consultation and custom solar solutions tailored to your energy needs and budget.",
+                  "image": "/images/sun-aviora_04.jpg",
+                  "theme": "yellow",
+                  "icon": "Users"
+                }
+              ],
+              "page": {
+                "header": {
+                  "badge": "WHAT WE OFFER",
+                  "heading": {
+                    "main": "Reliable & Sustainable ",
+                    "highlight": "Solar Services"
+                  },
+                  "description": "We offer complete end-to-end solar engineering, installation, battery storage and lifetime maintenance services across residential, commercial and industrial sectors."
+                },
+                "list": [
+                  {
+                    "id": "solar-panel-installation",
+                    "title": "Solar Panel Installation",
+                    "description": "Expert rooftop and ground mount solar system design and installation with top-tier photovoltaic panels.",
+                    "image": "/images/sun-aviora_01.jpg",
+                    "theme": "green",
+                    "icon": "Sun"
+                  },
+                  {
+                    "id": "energy-storage-solutions",
+                    "title": "Energy Storage Solutions",
+                    "description": "High-capacity smart lithium battery banks to keep your home or commercial enterprise powered 24/7 without grid reliance.",
+                    "image": "/images/sun-aviora_02.jpg",
+                    "theme": "yellow",
+                    "icon": "Zap"
+                  },
+                  {
+                    "id": "operation-maintenance",
+                    "title": "Operation & Maintenance",
+                    "description": "Proactive preventative maintenance, automated solar panel cleaning, and health diagnostics to maximize yield.",
+                    "image": "/images/sun-aviora_03.jpg",
+                    "theme": "green",
+                    "icon": "Wrench"
+                  },
+                  {
+                    "id": "consultation-planning",
+                    "title": "Consultation & Planning",
+                    "description": "Comprehensive site feasibility analysis, ROI calculations, and custom engineering blueprints tailored to your budget.",
+                    "image": "/images/sun-aviora_04.jpg",
+                    "theme": "yellow",
+                    "icon": "Users"
+                  },
+                  {
+                    "id": "commercial-solar",
+                    "title": "Commercial & Industrial Solar",
+                    "description": "High-capacity MW-scale solar setups engineered for factories, hospitals, IT parks and educational campuses.",
+                    "image": "/images/Solar-farm.png",
+                    "theme": "green",
+                    "icon": "Sun"
+                  },
+                  {
+                    "id": "solar-system-upgrades",
+                    "title": "Solar System Upgrades",
+                    "description": "Upgrade existing inverters, add bifacial panels or integrate hybrid battery systems to double your energy generation.",
+                    "image": "/images/sun-aviora_05.jpg",
+                    "theme": "yellow",
+                    "icon": "Zap"
+                  },
+                  {
+                    "id": "solar-monitoring",
+                    "title": "Smart Solar Monitoring",
+                    "description": "Real-time IoT cloud monitoring software tracking electricity generation, consumption patterns and fault detection.",
+                    "image": "/images/sun-aviora_06.jpg",
+                    "theme": "green",
+                    "icon": "Wrench"
+                  },
+                  {
+                    "id": "solar-financing-subsidy",
+                    "title": "Government Subsidy & Liaison",
+                    "description": "Complete guidance and end-to-end liaison support for government PM Surya Ghar subsidies and net metering approvals.",
+                    "image": "/images/sun-aviora_07.jpg",
+                    "theme": "yellow",
+                    "icon": "Users"
+                  }
+                ]
+              },
+              "serviceDetails": {
+                "sidebarList": [
+                  {
+                    "id": "solar-installation",
+                    "name": "Solar Installation"
+                  },
+                  {
+                    "id": "solar-maintenance",
+                    "name": "Solar Maintenance"
+                  },
+                  {
+                    "id": "inverter-battery-solutions",
+                    "name": "Inverter & Battery Solutions"
+                  },
+                  {
+                    "id": "solar-consultation",
+                    "name": "Solar Consultation"
+                  },
+                  {
+                    "id": "commercial-solar",
+                    "name": "Commercial Solar"
+                  },
+                  {
+                    "id": "residential-solar",
+                    "name": "Residential Solar"
+                  },
+                  {
+                    "id": "solar-water-heating",
+                    "name": "Solar Water Heating"
+                  },
+                  {
+                    "id": "hybrid-wind-solar",
+                    "name": "Hybrid Wind & Solar"
+                  }
+                ],
+                "defaultService": {
+                  "id": "hybrid-wind-solar",
+                  "badge": "Our Service",
+                  "heading": {
+                    "main": "Hybrid ",
+                    "highlight": "Wind & Solar Solutions"
+                  },
+                  "mainImage": "/images/Solar-farm.png",
+                  "tagline": "A smarter energy solution that combines the power of wind and solar to ensure continuous, reliable and clean electricity for your home or business.",
+                  "description": "Hybrid wind and solar systems use both solar panels and wind turbines to generate electricity. When the sun isn't shining, wind power helps keep your system running. This combination provides a stable and efficient energy supply throughout the year, even in changing weather conditions, making it a perfect choice for areas with variable sunlight and consistent wind.",
+                  "subImages": [
+                    "/images/sun-aviora_01.jpg",
+                    "/images/sun-aviora_03.jpg"
+                  ],
+                  "deliverySection": {
+                    "heading": {
+                      "main": "How We Deliver ",
+                      "highlight": "Hybrid Solutions"
+                    },
+                    "description": "We follow a simple and well-planned process to design and install a hybrid wind and solar system that meets your energy needs.",
+                    "list": [
+                      {
+                        "id": "1",
+                        "icon": "FileText",
+                        "title": "Site Analysis",
+                        "description": "We assess your location, wind speed, sunlight availability and energy needs."
+                      },
+                      {
+                        "id": "2",
+                        "icon": "Gear",
+                        "title": "Custom System Design",
+                        "description": "Our experts design a hybrid system that maximizes efficiency and performance."
+                      },
+                      {
+                        "id": "3",
+                        "icon": "Wrench",
+                        "title": "Professional Installation",
+                        "description": "We install high-quality solar panels and wind turbines with advanced technology."
+                      },
+                      {
+                        "id": "4",
+                        "icon": "Headphones",
+                        "title": "Ongoing Support",
+                        "description": "We provide regular monitoring, maintenance and support for long-term reliability."
+                      }
+                    ]
+                  },
+                  "whyChoose": {
+                    "heading": {
+                      "main": "Why Choose Our ",
+                      "highlight": "Hybrid Wind & Solar Service?"
+                    },
+                    "description": "Our hybrid systems offer the perfect blend of solar and wind energy, giving you a reliable, cost-effective and sustainable power solution for a brighter tomorrow.",
+                    "list": [
+                      {
+                        "id": "1",
+                        "icon": "Leaf",
+                        "title": "Continuous Power Supply",
+                        "description": "Generate electricity even when sunlight is low by using wind energy."
+                      },
+                      {
+                        "id": "2",
+                        "icon": "Currency",
+                        "title": "Lower Electricity Bills",
+                        "description": "Reduce your dependence on grid power and save on energy costs."
+                      },
+                      {
+                        "id": "3",
+                        "icon": "Gear",
+                        "title": "Eco-Friendly Energy",
+                        "description": "Clean and renewable energy that helps reduce carbon emissions."
+                      },
+                      {
+                        "id": "4",
+                        "icon": "BarChart",
+                        "title": "Higher Energy Efficiency",
+                        "description": "Combined solar and wind power maximizes energy generation throughout the year."
+                      },
+                      {
+                        "id": "5",
+                        "icon": "ShieldCheck",
+                        "title": "Reliable in All Weather",
+                        "description": "Works efficiently in different weather conditions, ensuring stable power supply."
+                      },
+                      {
+                        "id": "6",
+                        "icon": "Plant",
+                        "title": "Ideal for Remote Areas",
+                        "description": "A great solution for locations with limited grid access."
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "Stats": {
+          "variants": {
+            "SunAvioraStats1": {
+              "backgroundImage": "/images/Hero-banner.png",
+              "list": [
+                {
+                  "id": "projects",
+                  "value": 850,
+                  "suffix": "+",
+                  "label": "Solar Projects Completed",
+                  "icon": "Solar"
+                },
+                {
+                  "id": "clients",
+                  "value": 1.5,
+                  "suffix": "K+",
+                  "isDecimal": true,
+                  "label": "Happy Clients",
+                  "icon": "Clients"
+                },
+                {
+                  "id": "team",
+                  "value": 120,
+                  "suffix": "+",
+                  "label": "Expert Team Members",
+                  "icon": "Engineer"
+                },
+                {
+                  "id": "awards",
+                  "value": 50,
+                  "suffix": "+",
+                  "label": "Awards & Recognition",
+                  "icon": "Trophy"
+                }
+              ]
+            }
+          }
+        },
+        "WhyChooseUs": {
+          "variants": {
+            "SunAvioraWhyChooseUs1": {
+              "badge": "Why Choose Us",
+              "heading": {
+                "main": "Your Trusted Partner for a ",
+                "highlight": "Brighter, Greener Tomorrow"
+              },
+              "description": "We are committed to delivering reliable, efficient and sustainable solar energy solutions tailored to your needs. Our focus is on quality, innovation and customer satisfaction in every project we undertake.",
+              "images": {
+                "large": "/images/sun-aviora_05.jpg",
+                "small": "/images/sun-aviora_06.jpg"
+              },
+              "list": [
+                {
+                  "id": "cost-effective",
+                  "icon": "Currency",
+                  "title": "Cost-Effective Solutions",
+                  "description": "We provide high-quality solar systems that help you save on electricity bills with long-term benefits."
+                },
+                {
+                  "id": "expert-team",
+                  "icon": "Gear",
+                  "title": "Expert & Experienced Team",
+                  "description": "Our skilled professionals ensure seamless installation and support from start to finish."
+                },
+                {
+                  "id": "sustainable-energy",
+                  "icon": "Leaf",
+                  "title": "Sustainable & Reliable Energy",
+                  "description": "We focus on clean, renewable energy solutions for a healthier planet and a brighter future."
+                }
+              ]
+            }
+          }
+        },
+        "Projects": {
+          "variants": {
+            "SunAvioraProjects1": {
+              "badge": "Our Projects",
+              "heading": {
+                "main": "Our Latest ",
+                "highlight": "Projects"
+              },
+              "description": "Explore our recent solar energy projects that are helping homes, businesses and industries move towards a cleaner and more sustainable future.",
+              "list": [
+                {
+                  "id": "residential",
+                  "category": "RESIDENTIAL",
+                  "title": "Rooftop Solar Project",
+                  "description": "Clean energy for modern homes.",
+                  "image": "/images/sun-aviora_07.jpg",
+                  "icon": "Home"
+                },
+                {
+                  "id": "commercial",
+                  "category": "COMMERCIAL",
+                  "title": "Business Solar Solution",
+                  "description": "Reliable power for growing businesses.",
+                  "image": "/images/sun-aviora_08.jpg",
+                  "icon": "Building"
+                },
+                {
+                  "id": "solar-farm",
+                  "category": "SOLAR FARM",
+                  "title": "Ground Mount Project",
+                  "description": "Sustainable energy on a larger scale.",
+                  "image": "/images/Solar-farm.png",
+                  "icon": "Plant"
+                },
+                {
+                  "id": "energy-storage",
+                  "category": "ENERGY STORAGE",
+                  "title": "Solar + Storage System",
+                  "description": "Stable and uninterrupted power.",
+                  "image": "/images/sun-aviora_09.jpg",
+                  "icon": "Battery"
+                }
+              ],
+              "page": {
+                "header": {
+                  "badge": "OUR PORTFOLIO",
+                  "heading": {
+                    "main": "Explore Our Latest ",
+                    "highlight": "Solar Projects"
+                  },
+                  "description": "Discover how our residential, commercial, industrial and utility-scale solar projects are transforming clean energy generation across the country."
+                },
+                "list": [
+                  {
+                    "id": "1",
+                    "category": "RESIDENTIAL",
+                    "title": "Rooftop Solar Project",
+                    "description": "Clean energy for modern homes.",
+                    "image": "/images/sun-aviora_01.jpg",
+                    "icon": "Home"
+                  },
+                  {
+                    "id": "2",
+                    "category": "COMMERCIAL",
+                    "title": "Business Solar Solution",
+                    "description": "Reliable power for growing businesses.",
+                    "image": "/images/sun-aviora_08.jpg",
+                    "icon": "Building"
+                  },
+                  {
+                    "id": "3",
+                    "category": "SOLAR FARM",
+                    "title": "Ground Mount Project",
+                    "description": "Sustainable energy on a larger scale.",
+                    "image": "/images/Solar-farm.png",
+                    "icon": "Plant"
+                  },
+                  {
+                    "id": "4",
+                    "category": "ENERGY STORAGE",
+                    "title": "Solar + Storage System",
+                    "description": "Stable and uninterrupted power.",
+                    "image": "/images/sun-aviora_09.jpg",
+                    "icon": "Battery"
+                  },
+                  {
+                    "id": "5",
+                    "category": "INDUSTRIAL",
+                    "title": "Factory Solar Setup",
+                    "description": "High-yield power for industrial units.",
+                    "image": "/images/sun-aviora_05.jpg",
+                    "icon": "Building"
+                  },
+                  {
+                    "id": "6",
+                    "category": "AGRICULTURE",
+                    "title": "Solar Water Pump Project",
+                    "description": "Efficient irrigation for rural farms.",
+                    "image": "/images/sun-aviora_06.jpg",
+                    "icon": "Plant"
+                  },
+                  {
+                    "id": "7",
+                    "category": "INSTITUTIONAL",
+                    "title": "Campus Green Energy",
+                    "description": "Sustainable electricity for colleges.",
+                    "image": "/images/sun-aviora_07.jpg",
+                    "icon": "Home"
+                  },
+                  {
+                    "id": "8",
+                    "category": "HYBRID WIND-SOLAR",
+                    "title": "Hybrid Grid Project",
+                    "description": "Combined dual-source generation.",
+                    "image": "/images/Solar-farm.png",
+                    "icon": "Battery"
+                  }
+                ]
+              },
+              "details": {
+                "heroSection": {
+                  "image": "/images/Solar-farm.png",
+                  "specCard": {
+                    "heading": {
+                      "main": "Project Features & ",
+                      "highlight": "Specifications"
+                    },
+                    "list": [
+                      {
+                        "icon": "Folder",
+                        "label": "Project Name:",
+                        "value": "Solar Power Plant Installation"
+                      },
+                      {
+                        "icon": "MapPin",
+                        "label": "Location:",
+                        "value": "Jaipur, Rajasthan, India"
+                      },
+                      {
+                        "icon": "Zap",
+                        "label": "Capacity:",
+                        "value": "50 MW"
+                      },
+                      {
+                        "icon": "Grid",
+                        "label": "Number of Panels:",
+                        "value": "1,20,000"
+                      },
+                      {
+                        "icon": "Layers",
+                        "label": "Panel Type:",
+                        "value": "Monocrystalline Solar Panels"
+                      },
+                      {
+                        "icon": "Server",
+                        "label": "Inverter Capacity:",
+                        "value": "50 MW"
+                      },
+                      {
+                        "icon": "Leaf",
+                        "label": "CO₂ Reduction:",
+                        "value": "~ 70,000 Tons/Year"
+                      },
+                      {
+                        "icon": "Clock",
+                        "label": "Installation Time:",
+                        "value": "6 Months"
+                      }
+                    ]
+                  }
+                },
+                "relatedProjects": [
+                  {
+                    "id": "100-mw",
+                    "title": "100 MW Solar Energy Project",
+                    "location": "Gujarat, India",
+                    "image": "/images/Solar-farm.png"
+                  },
+                  {
+                    "id": "commercial-rooftop",
+                    "title": "Commercial Rooftop Solar Installation",
+                    "location": "Delhi, India",
+                    "image": "/images/sun-aviora_01.jpg"
+                  },
+                  {
+                    "id": "off-grid-solution",
+                    "title": "Off-Grid Solar Solution",
+                    "location": "Uttarakhand, India",
+                    "image": "/images/sun-aviora_07.jpg"
+                  }
+                ],
+                "overview": {
+                  "heading": {
+                    "main": "Project ",
+                    "highlight": "Overview"
+                  },
+                  "description": "The 50 MW solar power plant project was developed to provide clean, renewable energy for commercial and industrial needs. The project helps reduce carbon emissions and supports sustainable growth by utilizing advanced solar technology and efficient infrastructure. Our team managed the entire process from site analysis to installation, ensuring a reliable and high-performance solar solution."
+                },
+                "challengesSolutions": {
+                  "heading": {
+                    "main": "Challenges & ",
+                    "highlight": "Solutions"
+                  },
+                  "challenges": [
+                    "Land preparation and site conditions",
+                    "Need for high energy efficiency",
+                    "Grid integration and connectivity",
+                    "Changing weather conditions"
+                  ],
+                  "solutions": [
+                    "Proper site planning and soil stabilization",
+                    "Use of high-efficiency solar panels",
+                    "Advanced grid integration system",
+                    "Durable infrastructure for all weather conditions"
+                  ]
+                },
+                "resultsImpact": {
+                  "heading": {
+                    "main": "Results & ",
+                    "highlight": "Impact"
+                  },
+                  "description": "Since installation, the 50 MW solar power plant has delivered clean and sustainable energy, leading to a significant reduction in carbon emissions. The project supports renewable energy adoption, lowers electricity costs and contributes to a greener and healthier environment for future generations.",
+                  "bottomImage": "/images/Solar-farm.png"
+                }
+              }
+            }
+          }
+        },
+        "Testimonials": {
+          "variants": {
+            "SunAvioraTestimonials1": {
+              "badge": "What Our Clients Say",
+              "heading": {
+                "main": "Real Experiences, ",
+                "highlight": "Real Impact"
+              },
+              "description": "We take pride in delivering reliable solar energy solutions. Here's what our clients have to say about their experience with SunAviora.",
+              "image": "/images/sun-aviora_10.jpg",
+              "imageBadge": {
+                "text": "Clean Energy\nfor a Better Tomorrow"
+              },
+              "list": [
+                {
+                  "id": "1",
+                  "quote": "“SunAviora provided an excellent solar installation for our home. The team was professional, on time, and guided us throughout the process. We've already noticed a big reduction in our electricity bills.”",
+                  "author": "Rohit Sharma",
+                  "designation": "Homeowner, New Delhi",
+                  "avatar": "/images/sun-aviora_11.jpg",
+                  "rating": 5
+                },
+                {
+                  "id": "2",
+                  "quote": "“Highly professional team and great service. They helped us choose the right solar solution for our business needs. The entire process was smooth and hassle-free. Truly a trusted partner!”",
+                  "author": "Neha Verma",
+                  "designation": "Business Owner, Noida",
+                  "avatar": "/images/sun-aviora_12.jpg",
+                  "rating": 5
+                },
+                {
+                  "id": "3",
+                  "quote": "“From consultation to installation, everything was handled with great care. The quality of work and customer support is outstanding. I highly recommend SunAviora for anyone looking for solar energy solutions.”",
+                  "author": "Amit Kumar",
+                  "designation": "Factory Owner, Gurgaon",
+                  "avatar": "/images/sun-aviora_11.jpg",
+                  "rating": 5
+                },
+                {
+                  "id": "4",
+                  "quote": "“Switching to solar was the best decision for our commercial property. SunAviora designed the perfect system that exceeded our expectations in terms of both ROI and performance.”",
+                  "author": "Pooja Malhotra",
+                  "designation": "Retail Chain Owner, Delhi",
+                  "avatar": "/images/sun-aviora_12.jpg",
+                  "rating": 5
+                }
+              ]
+            }
+          }
+        },
+        "BlogNews": {
+          "variants": {
+            "SunAvioraBlogNews1": {
+              "badge": "Latest Blog Post",
+              "heading": {
+                "main": "Stay Updated on ",
+                "highlight": "Solar Energy Insights"
+              },
+              "description": "Explore our latest blog posts to learn about solar energy, industry trends, tips and innovations that help you make a cleaner and brighter future.",
+              "list": [
+                {
+                  "id": "demand-2025",
+                  "date": "February 23, 2025",
+                  "category": "Solar",
+                  "title": "The Growing Demand for Solar Energy in 2025",
+                  "description": "Discover why more homes and businesses are switching to solar energy and how it is shaping a cleaner, greener future.",
+                  "image": "/images/sun-aviora_01.jpg",
+                  "href": "/blog/demand-2025"
+                },
+                {
+                  "id": "installation-guide",
+                  "date": "February 20, 2025",
+                  "category": "Installation",
+                  "title": "A Complete Guide to Solar Panel Installation",
+                  "description": "Learn the step-by-step process of solar panel installation and what to consider before going solar.",
+                  "image": "/images/sun-aviora_06.jpg",
+                  "href": "/blog/installation-guide"
+                },
+                {
+                  "id": "environmental-benefits",
+                  "date": "February 18, 2025",
+                  "category": "Renewable",
+                  "title": "How Solar Energy Benefits the Environment",
+                  "description": "Explore the key environmental benefits of solar energy and how it helps reduce carbon emissions for a healthier planet.",
+                  "image": "/images/Solar-farm.png",
+                  "href": "/blog/environmental-benefits"
+                },
+                {
+                  "id": "maximize-savings",
+                  "date": "February 15, 2025",
+                  "category": "Tips",
+                  "title": "Top Tips to Maximize Your Solar Energy Savings",
+                  "description": "Simple and effective tips to get the most out of your solar system and reduce your electricity bills.",
+                  "image": "/images/sun-aviora_07.jpg",
+                  "href": "/blog/maximize-savings"
+                }
+              ],
+              "page": {
+                "header": {
+                  "badge": "Latest Blog Post",
+                  "heading": {
+                    "main": "Stay Updated on ",
+                    "highlight": "Solar Energy Insights"
+                  },
+                  "description": "Discover the latest news, tips and industry trends about solar energy, renewable solutions and a greener future for homes and businesses."
+                },
+                "list": [
+                  {
+                    "id": "benefits-for-home",
+                    "date": "February 25, 2025",
+                    "category": "Residential",
+                    "title": "Benefits of Solar Energy for Your Home",
+                    "description": "Learn how solar energy can reduce your electricity bills and create a cleaner, healthier home environment.",
+                    "image": "/images/sun-aviora_01.jpg",
+                    "href": "/blog/benefits-for-home"
+                  },
+                  {
+                    "id": "guide-installation",
+                    "date": "February 22, 2025",
+                    "category": "Installation",
+                    "title": "A Complete Guide to Solar Panel Installation",
+                    "description": "Step-by-step guide to solar panel installation, including planning, process and key factors to consider.",
+                    "image": "/images/sun-aviora_06.jpg",
+                    "href": "/blog/guide-installation"
+                  },
+                  {
+                    "id": "environment-benefits",
+                    "date": "February 18, 2025",
+                    "category": "Solar Farm",
+                    "title": "How Solar Energy Benefits the Environment",
+                    "description": "Explore how solar power helps reduce carbon emissions and supports a cleaner and more sustainable planet.",
+                    "image": "/images/Solar-farm.png",
+                    "href": "/blog/environment-benefits"
+                  },
+                  {
+                    "id": "solar-vs-wind",
+                    "date": "February 15, 2025",
+                    "category": "Renewable",
+                    "title": "Solar vs Wind Energy: Which is Right for You?",
+                    "description": "Compare solar and wind energy to understand their advantages and choose the best solution for your needs.",
+                    "image": "/images/sun-aviora_08.jpg",
+                    "href": "/blog/solar-vs-wind"
+                  },
+                  {
+                    "id": "essential-maintenance-tips",
+                    "date": "February 10, 2025",
+                    "category": "Maintenance",
+                    "title": "Essential Tips for Solar Panel Maintenance",
+                    "description": "Keep your solar system running at peak efficiency with these simple maintenance tips and best practices.",
+                    "image": "/images/sun-aviora_03.jpg",
+                    "href": "/blog/essential-maintenance-tips"
+                  },
+                  {
+                    "id": "future-battery-storage",
+                    "date": "February 05, 2025",
+                    "category": "Technology",
+                    "title": "The Future of Solar Energy and Battery Storage",
+                    "description": "Discover how advanced battery storage solutions are shaping the future of reliable and efficient solar power.",
+                    "image": "/images/sun-aviora_02.jpg",
+                    "href": "/blog/future-battery-storage"
+                  }
+                ]
+              },
+              "sidebar": {
+                "categories": [
+                  {
+                    "name": "Solar Installation",
+                    "category": "Installation",
+                    "count": "08",
+                    "targetId": "guide-installation"
+                  },
+                  {
+                    "name": "Solar Maintenance",
+                    "category": "Maintenance",
+                    "count": "06",
+                    "targetId": "essential-maintenance-tips"
+                  },
+                  {
+                    "name": "Renewable Energy",
+                    "category": "Renewable",
+                    "count": "10",
+                    "targetId": "solar-vs-wind"
+                  },
+                  {
+                    "name": "Residential Solar",
+                    "category": "Residential",
+                    "count": "05",
+                    "targetId": "benefits-for-home"
+                  },
+                  {
+                    "name": "Solar Technology",
+                    "category": "Technology",
+                    "count": "07",
+                    "targetId": "future-battery-storage"
+                  },
+                  {
+                    "name": "Solar Farm",
+                    "category": "Solar Farm",
+                    "count": "04",
+                    "targetId": "environment-benefits"
+                  }
+                ],
+                "recentPosts": [
+                  {
+                    "id": "solar-vs-wind",
+                    "title": "Solar vs Wind Energy: Which is Right for You?",
+                    "date": "February 15, 2025",
+                    "image": "/images/sun-aviora_08.jpg",
+                    "href": "/blog/solar-vs-wind"
+                  },
+                  {
+                    "id": "guide-installation",
+                    "title": "A Complete Guide to Solar Panel Installation",
+                    "date": "February 22, 2025",
+                    "image": "/images/sun-aviora_06.jpg",
+                    "href": "/blog/guide-installation"
+                  },
+                  {
+                    "id": "environment-benefits",
+                    "title": "How Solar Energy Benefits the Environment",
+                    "date": "February 18, 2025",
+                    "image": "/images/Solar-farm.png",
+                    "href": "/blog/environment-benefits"
+                  },
+                  {
+                    "id": "benefits-for-home",
+                    "title": "Top Tips to Maximize Your Solar Energy Savings",
+                    "date": "February 15, 2025",
+                    "image": "/images/sun-aviora_01.jpg",
+                    "href": "/blog/benefits-for-home"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "Faq": {
+          "variants": {
+            "SunAvioraFaq1": {
+              "leftCard": {
+                "badge": "FAQ",
+                "heading": {
+                  "main": "The Answers",
+                  "middle": "You Need for a",
+                  "highlight": "Greener Future"
+                },
+                "description": "Get clear answers to your questions about solar energy, installation, savings and maintenance.",
+                "image": "/images/Solar-farm.png"
+              },
+              "rightSection": {
+                "badge": "FAQs",
+                "heading": {
+                  "main": "Frequently Asked ",
+                  "highlight": "Questions"
+                },
+                "description": "Find answers to the most common questions about our solar solutions, installation process, cost savings and more.",
+                "list": [
+                  {
+                    "id": "1",
+                    "question": "How do solar panels work?",
+                    "answer": "Solar panels convert sunlight into electricity using photovoltaic (PV) cells. When sunlight hits the panels, it generates direct current (DC) electricity, which is then converted into usable alternating current (AC) for your home or business."
+                  },
+                  {
+                    "id": "2",
+                    "question": "What are the benefits of installing solar panels?",
+                    "answer": "Installing solar panels lowers electricity bills, provides clean renewable energy, reduces carbon emissions, increases property value, and offers protection against rising utility tariffs."
+                  },
+                  {
+                    "id": "3",
+                    "question": "How much can I save with solar energy?",
+                    "answer": "Depending on your electricity usage, roof size, and location, most homeowners and businesses save between 60% to 90% on their ongoing monthly power bills."
+                  },
+                  {
+                    "id": "4",
+                    "question": "How long does the installation process take?",
+                    "answer": "Residential installations typically take 2-5 days once permits and site approvals are cleared, while larger commercial projects take 1 to 3 weeks depending on the system size."
+                  },
+                  {
+                    "id": "5",
+                    "question": "Do solar panels require a lof maiot ntenance?",
+                    "answer": "No, solar panels require minimal maintenance. Occasional cleaning with water to remove dust and debris along with an annual routine check is generally all that is needed."
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "ContactPage": {
+          "variants": {
+            "SunAvioraContactPage1": {
+              "header": {
+                "badge": "Contact Us",
+                "heading": {
+                  "main": "Get in Touch ",
+                  "highlight": "With Us"
+                },
+                "description": "Have questions about our solar solutions? Our team is here to help. Feel free to reach out and we'll get back to you soon."
+              },
+              "infoCard": {
+                "badge": "GET IN TOUCH",
+                "heading": {
+                  "main": "Let's Build a",
+                  "highlight": "Cleaner Tomorrow"
+                },
+                "description": "Reach out to our team for solar installation, consultation or any queries. We're always ready to help you.",
+                "location": {
+                  "title": "Our Location",
+                  "value": "123 Sun Valley Blvd, Suite 400, Los Angeles, CA 90001, USA"
+                },
+                "phone": {
+                  "title": "Call Us",
+                  "value": "+1 00000 00000"
+                },
+                "email": {
+                  "title": "Email Us",
+                  "value": "info@xyz.com"
+                },
+                "socials": [
+                  {
+                    "platform": "facebook",
+                    "href": "https://www.facebook.com"
+                  },
+                  {
+                    "platform": "twitter",
+                    "href": "https://www.twitter.com"
+                  },
+                  {
+                    "platform": "instagram",
+                    "href": "https://www.instagram.com"
+                  },
+                  {
+                    "platform": "linkedin",
+                    "href": "https://www.linkedin.com"
+                  },
+                  {
+                    "platform": "youtube",
+                    "href": "https://www.youtube.com"
+                  }
+                ]
+              },
+              "form": {
+                "badge": "SEND A MESSAGE",
+                "heading": {
+                  "main": "Request a ",
+                  "highlight": "Free Consultation"
+                },
+                "description": "Fill out the form below and our team will get back to you shortly.",
+                "submitButton": "Send Message"
+              },
+              "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.83923192776!2d77.0688975472578!3d28.52728034389636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            }
+          }
+        },
+        "Footer": {
+          "variants": {
+            "SunAvioraFooter1": {
+              "logo": {
+                "src": "/images/footer_logo.png",
+                "alt": "SunAviora - Powering a Greener Future",
+                "href": "/"
+              },
+              "description": "At SunAviora, we are committed to providing reliable and innovative solar energy solutions to help homes, businesses and industries move towards a cleaner and more sustainable tomorrow.",
+              "quickLinks": {
+                "title": "Quick Links",
+                "list": [
+                  {
+                    "label": "About Us",
+                    "href": "/about"
+                  },
+                  {
+                    "label": "Our Services",
+                    "href": "/services"
+                  },
+                  {
+                    "label": "Projects",
+                    "href": "/projects"
+                  },
+                  {
+                    "label": "Faqs",
+                    "href": "/faq"
+                  },
+                  {
+                    "label": "Blog",
+                    "href": "/blog"
+                  },
+                  {
+                    "label": "Contact Us",
+                    "href": "/contact"
+                  }
+                ]
+              },
+              "services": {
+                "title": "Our Services",
+                "list": [
+                  {
+                    "label": "Solar Panel Installation",
+                    "href": "/services"
+                  },
+                  {
+                    "label": "Energy Storage Solutions",
+                    "href": "/services"
+                  },
+                  {
+                    "label": "Operation & Maintenance",
+                    "href": "/services"
+                  },
+                  {
+                    "label": "Consultation & Planning",
+                    "href": "/services"
+                  },
+                  {
+                    "label": "Solar System Upgrades",
+                    "href": "/services"
+                  },
+                  {
+                    "label": "Commercial Solar Solutions",
+                    "href": "/services"
+                  }
+                ]
+              },
+              "contact": {
+                "title": "Get In Touch",
+                "address": {
+                  "title": "Our Address",
+                  "lines": [
+                    "123 Sun Valley Blvd,",
+                    "Los Angeles, CA 90001, USA"
+                  ]
+                },
+                "phone": {
+                  "title": "Call Us",
+                  "value": "+1 00000 00000"
+                },
+                "email": {
+                  "title": "Mail Us",
+                  "value": "info@xyz.com"
+                }
+              },
+              "socials": [
+                {
+                  "platform": "facebook",
+                  "href": "https://www.facebook.com"
+                },
+                {
+                  "platform": "twitter",
+                  "href": "https://www.twitter.com"
+                },
+                {
+                  "platform": "instagram",
+                  "href": "https://www.instagram.com"
+                },
+                {
+                  "platform": "linkedin",
+                  "href": "https://www.linkedin.com"
+                },
+                {
+                  "platform": "youtube",
+                  "href": "https://www.youtube.com"
+                }
+              ],
+              "copyright": " Copyright @ 2026. All Rights Reserved.Powered By Lestow "
+            }
+          }
+        }
       }
-    },
-    "relatedProjects": [
-      {
-        "id": "100-mw",
-        "title": "100 MW Solar Energy Project",
-        "location": "Gujarat, India",
-        "image": "/images/Solar-farm.png"
-      },
-      {
-        "id": "commercial-rooftop",
-        "title": "Commercial Rooftop Solar Installation",
-        "location": "Delhi, India",
-        "image": "/images/sun-aviora_01.jpg"
-      },
-      {
-        "id": "off-grid-solution",
-        "title": "Off-Grid Solar Solution",
-        "location": "Uttarakhand, India",
-        "image": "/images/sun-aviora_07.jpg"
-      }
-    ],
-    "overview": {
-      "titlePrefix": "Project ",
-      "titleHighlight": "Overview",
-      "description": "The 50 MW solar power plant project was developed to provide clean, renewable energy for commercial and industrial needs. The project helps reduce carbon emissions and supports sustainable growth by utilizing advanced solar technology and efficient infrastructure. Our team managed the entire process from site analysis to installation, ensuring a reliable and high-performance solar solution."
-    },
-    "challengesSolutions": {
-      "titlePrefix": "Challenges & ",
-      "titleHighlight": "Solutions",
-      "challenges": [
-        "Land preparation and site conditions",
-        "Need for high energy efficiency",
-        "Grid integration and connectivity",
-        "Changing weather conditions"
-      ],
-      "solutions": [
-        "Proper site planning and soil stabilization",
-        "Use of high-efficiency solar panels",
-        "Advanced grid integration system",
-        "Durable infrastructure for all weather conditions"
-      ]
-    },
-    "resultsImpact": {
-      "titlePrefix": "Results & ",
-      "titleHighlight": "Impact",
-      "description": "Since installation, the 50 MW solar power plant has delivered clean and sustainable energy, leading to a significant reduction in carbon emissions. The project supports renewable energy adoption, lowers electricity costs and contributes to a greener and healthier environment for future generations.",
-      "bottomImage": "/images/Solar-farm.png"
     }
   }
 }

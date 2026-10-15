@@ -7,7 +7,7 @@ import { BsBuildingsFill, BsBatteryCharging } from "react-icons/bs";
 import { PiPlantFill } from "react-icons/pi";
 import { FiArrowUpRight } from "react-icons/fi";
 import Breadcrumb from "@/components/common/Breadcrumb";
-import data from "@/data/sun-aviora.json";
+import { getSunAvioraSections } from "@/lib/sun-aviora";
 
 export const metadata: Metadata = {
   title: "Our Projects - SunAviora",
@@ -32,14 +32,30 @@ function ProjectIcon({ type }: { type: string }) {
 }
 
 export default function ProjectsPage() {
-  const { projectsPage } = data;
-  const { banner, header, projects } = projectsPage;
+  const sections = getSunAvioraSections();
+  const projectsVariant = sections.Projects?.variants?.SunAvioraProjects1;
+  const pageBanner = sections.PageBanners?.variants?.SunAvioraPageBanners1?.pages?.projects;
+
+  const header = projectsVariant?.page?.header || {
+    badge: projectsVariant?.badge || "OUR PROJECTS",
+    heading: {
+      main: projectsVariant?.heading?.main || "Projects",
+      highlight: projectsVariant?.heading?.highlight || " Overview",
+    },
+    description: projectsVariant?.description || "",
+  };
+
+  const projectList = projectsVariant?.page?.list || projectsVariant?.list || [];
 
   return (
     <main className="w-full flex flex-col font-sans">
       <Breadcrumb
-        title={banner.title}
-        breadcrumbs={banner.breadcrumbs}
+        data={pageBanner}
+        title={pageBanner?.title || "Our Projects"}
+        breadcrumbs={pageBanner?.breadcrumbs || [
+          { label: "Home", href: "/" },
+          { label: "Our Projects" },
+        ]}
       />
 
       <section className="py-14 md:py-20 px-6 sm:px-10 lg:px-16 bg-white">
@@ -54,8 +70,8 @@ export default function ProjectsPage() {
             </div>
 
             <h2 className="text-3xl md:text-4xl lg:text-[44px] font-bold text-[#0f172a] mb-4 leading-tight tracking-tight">
-              {header.titlePrefix}
-              <span className="text-[#16a34a]">{header.titleHighlight}</span>
+              {header.heading?.main}
+              <span className="text-[#16a34a]">{header.heading?.highlight}</span>
             </h2>
 
             <p className="text-gray-600 text-sm md:text-base leading-relaxed">
@@ -64,7 +80,7 @@ export default function ProjectsPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
-            {projects.map((project) => (
+            {projectList.map((project) => (
               <div
                 key={project.id}
                 className="bg-white rounded-[26px] shadow-[0_6px_25px_rgb(0,0,0,0.06)] overflow-hidden border border-gray-100 flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1.5"

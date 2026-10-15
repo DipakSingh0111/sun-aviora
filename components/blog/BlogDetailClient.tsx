@@ -7,16 +7,21 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiCalendar, FiUser, FiChevronRight, FiX, FiMaximize2 } from "react-icons/fi";
 import { FaFacebookF, FaLinkedinIn, FaYoutube, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import data from "@/data/sun-aviora.json";
+import { getSunAvioraSections } from "@/lib/sun-aviora";
+import type { BlogNewsData } from "@/types/sun-aviora.types";
 
-interface BlogDetailClientProps {
+export interface BlogDetailClientProps {
   initialId: string;
+  data?: BlogNewsData;
 }
 
-export default function BlogDetailClient({ initialId }: BlogDetailClientProps) {
+export default function BlogDetailClient({ initialId, data }: BlogDetailClientProps) {
+  const sections = getSunAvioraSections();
+  const blogNewsData = data || sections.BlogNews?.variants?.SunAvioraBlogNews1;
+
   const allPosts = [
-    ...(data.blogPage?.posts || []),
-    ...(data.blogSection?.posts || []),
+    ...(blogNewsData?.page?.list || []),
+    ...(blogNewsData?.list || []),
   ];
 
   const [activePostId, setActivePostId] = useState<string>(initialId);
@@ -33,7 +38,7 @@ export default function BlogDetailClient({ initialId }: BlogDetailClientProps) {
       description: "Solar energy is no longer just an alternative — it has become a leading solution for a cleaner and greener future.",
     };
 
-  const sidebar = data.blogDetailSidebar || {
+  const sidebar = blogNewsData?.sidebar || {
     categories: [],
     recentPosts: [],
   };

@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 import { TbCoinRupee } from "react-icons/tb";
 import { LuSettings2 } from "react-icons/lu";
 import { PiShieldCheckFill, PiLeafBold } from "react-icons/pi";
-import data from "@/data/sun-aviora.json";
+import type { SectionProps } from "@/types/sun-aviora.types";
+import { getSunAvioraSections } from "@/lib/sun-aviora";
 
 function FeatureIcon({ type }: { type: string }) {
   const iconProps = { className: "w-8 h-8 text-[#16a34a]" };
@@ -22,8 +23,9 @@ function FeatureIcon({ type }: { type: string }) {
   }
 }
 
-export default function WhyChooseUs() {
-  const { whyChooseUs } = data;
+export default function WhyChooseUs({ data }: SectionProps.WhyChooseUs) {
+  const whyChooseUsData = data || getSunAvioraSections().WhyChooseUs?.variants?.SunAvioraWhyChooseUs1;
+  if (!whyChooseUsData) return null;
 
   return (
     <section className="py-10 md:py-10 px-6 sm:px-10 lg:px-16 bg-white font-sans overflow-hidden">
@@ -46,7 +48,7 @@ export default function WhyChooseUs() {
                 className="relative w-full sm:w-[90%] overflow-hidden rounded-[36px] border-[5px] border-white shadow-xl aspect-[4/3] sm:min-h-[420px] md:min-h-[460px]"
               >
                 <Image
-                  src={whyChooseUs.images.largeImage}
+                  src={whyChooseUsData.images.large}
                   alt="Solar Panels Installation"
                   fill
                   className="object-cover"
@@ -63,7 +65,7 @@ export default function WhyChooseUs() {
                 className="absolute -bottom-4 -right-2 sm:-right-4 w-[62%] sm:w-[60%] overflow-hidden rounded-[34px] border-[6px] border-white shadow-2xl aspect-[4/3] sm:min-h-[260px] md:min-h-[290px] z-10"
               >
                 <Image
-                  src={whyChooseUs.images.smallImage}
+                  src={whyChooseUsData.images.small}
                   alt="Solar Engineers Inspecting Panels"
                   fill
                   className="object-cover"
@@ -83,24 +85,24 @@ export default function WhyChooseUs() {
             <div className="flex items-center gap-3 mb-3">
               <span className="w-8 h-[2px] bg-[#16a34a]" />
               <span className="text-[#16a34a] font-semibold text-sm uppercase tracking-wider">
-                {whyChooseUs.badge}
+                {whyChooseUsData.badge}
               </span>
               <span className="w-8 h-[2px] bg-[#16a34a]" />
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#0f172a] leading-[1.2] tracking-tight">
-              {whyChooseUs.titlePrefix}
+              {whyChooseUsData.heading.main}
               <span className="text-[#16a34a] block sm:inline">
-                {whyChooseUs.titleHighlight}
+                {whyChooseUsData.heading.highlight}
               </span>
             </h2>
 
             <p className="mt-5 text-gray-600 text-base leading-relaxed">
-              {whyChooseUs.description}
+              {whyChooseUsData.description}
             </p>
 
             <div className="mt-8 space-y-6 w-full">
-              {whyChooseUs.features.map((feature, idx) => (
+              {whyChooseUsData.list.map((feature, idx) => (
                 <motion.div
                   key={feature.id}
                   initial={{ opacity: 0, x: 20 }}

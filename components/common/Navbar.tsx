@@ -5,28 +5,31 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import siteData from "@/data/sun-aviora.json";
+import type { SectionProps } from "@/types/sun-aviora.types";
+import { getSunAvioraSections } from "@/lib/sun-aviora";
 
-export default function Navbar() {
-  const { navbar } = siteData;
+export default function Navbar({ data }: SectionProps.Header) {
+  const headerData = data || getSunAvioraSections().Header?.variants?.SunAvioraHeader1;
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
+  if (!headerData) return null;
+
   return (
     <header className="w-full sticky top-0 z-50 bg-white">
-      {navbar.topBar?.visible && (
+      {headerData.topBar?.visible && (
         <div
           className="w-full h-1 sm:h-1.5"
-          style={{ backgroundColor: navbar.topBar.backgroundColor }}
+          style={{ backgroundColor: headerData.topBar.backgroundColor }}
         />
       )}
 
       <div className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link href={navbar.logo.href} className="flex items-center shrink-0">
+          <Link href={headerData.logo.href || "/"} className="flex items-center shrink-0">
             <Image
-              src={navbar.logo.src}
-              alt={navbar.logo.alt}
+              src={headerData.logo.src}
+              alt={headerData.logo.alt}
               width={350}
               height={100}
               priority
@@ -35,7 +38,7 @@ export default function Navbar() {
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
-            {navbar.navLinks.map((link) => {
+            {headerData.menu.map((link) => {
               const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
 
               return (
@@ -72,11 +75,11 @@ export default function Navbar() {
 
           <div className="hidden lg:flex items-center">
             <Link
-              href={navbar.ctaButton.href}
+              href={headerData.cta.href}
               className="group inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-gradient-to-r from-[#ff9f00] to-[#ffb703] hover:from-[#f59e0b] hover:to-[#eab308] text-[#0f2e48] font-bold text-[16px] shadow-sm hover:shadow-md transition-all duration-200"
             >
-              <span>{navbar.ctaButton.label}</span>
-              {navbar.ctaButton.showArrow && (
+              <span>{headerData.cta.label}</span>
+              {headerData.cta.showArrow && (
                 <svg
                   className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1"
                   fill="none"
@@ -124,7 +127,7 @@ export default function Navbar() {
             className="lg:hidden border-t border-gray-100 bg-white px-6 py-5 shadow-lg overflow-hidden"
           >
             <nav className="flex flex-col gap-2">
-              {navbar.navLinks.map((link) => {
+              {headerData.menu.map((link) => {
                 const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
 
                 return (
@@ -147,12 +150,12 @@ export default function Navbar() {
               })}
               <div className="pt-3 border-t border-gray-100">
                 <Link
-                  href={navbar.ctaButton.href}
+                  href={headerData.cta.href}
                   onClick={() => setIsOpen(false)}
                   className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#ff9f00] to-[#ffb703] text-[#0f2e48] font-bold text-base"
                 >
-                  <span>{navbar.ctaButton.label}</span>
-                  {navbar.ctaButton.showArrow && (
+                  <span>{headerData.cta.label}</span>
+                  {headerData.cta.showArrow && (
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m-7-7 7 7-7 7" />
                     </svg>

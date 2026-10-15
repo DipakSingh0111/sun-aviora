@@ -1,8 +1,8 @@
 import React from "react";
 import type { Metadata } from "next";
 import Breadcrumb from "@/components/common/Breadcrumb";
-import FaqSection from "@/components/FaqSection";
-import data from "@/data/sun-aviora.json";
+import FaqSection from "@/components/faq/FaqSection";
+import { getSunAvioraSections } from "@/lib/sun-aviora";
 
 export const metadata: Metadata = {
   title: "FAQ - SunAviora",
@@ -11,17 +11,22 @@ export const metadata: Metadata = {
 };
 
 export default function FaqPage() {
-  const { faqPage } = data;
+  const sections = getSunAvioraSections();
+  const pageBanner = sections.PageBanners?.variants?.SunAvioraPageBanners1?.pages?.faq;
 
   return (
     <main className="w-full flex flex-col">
       <Breadcrumb
-        title={faqPage.banner.title}
-        breadcrumbs={faqPage.banner.breadcrumbs}
+        data={pageBanner}
+        title={pageBanner?.title || "Faq"}
+        breadcrumbs={pageBanner?.breadcrumbs || [
+          { label: "Home", href: "/" },
+          { label: "Faq" },
+        ]}
       />
 
       {/* Main FAQ Section */}
-      <FaqSection />
+      <FaqSection data={sections.Faq?.variants?.SunAvioraFaq1} />
     </main>
   );
 }

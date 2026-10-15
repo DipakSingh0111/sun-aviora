@@ -17,12 +17,11 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import data from "@/data/sun-aviora.json";
+import type { SectionProps } from "@/types/sun-aviora.types";
+import { getSunAvioraSections } from "@/lib/sun-aviora";
 
-export default function ContactSection() {
-  const { contactPage } = data;
-  const { header, infoCard, form, mapEmbedUrl } = contactPage;
-
+export default function ContactSection({ data }: SectionProps.ContactPage) {
+  const contactData = data || getSunAvioraSections().ContactPage?.variants?.SunAvioraContactPage1;
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -33,13 +32,16 @@ export default function ContactSection() {
 
   const [submitted, setSubmitted] = useState(false);
 
+  if (!contactData) return null;
+  const { header, infoCard, form, mapEmbedUrl } = contactData;
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 4000);
   };
 
-  const getSocialIcon = (platform: string) => {
+  const getSocialIcon = (platform?: string) => {
     switch (platform) {
       case "facebook":
         return <FaFacebookF className="w-5 h-5" />;
@@ -69,8 +71,10 @@ export default function ContactSection() {
           </div>
 
           <h2 className="text-3xl md:text-4xl lg:text-[44px] font-bold text-[#0f172a] mb-4 leading-tight tracking-tight">
-            {header.titlePrefix}
-            <span className="text-[#16a34a]">{header.titleHighlight}</span>
+            {header.heading.main}
+            {header.heading.highlight && (
+              <span className="text-[#16a34a]">{header.heading.highlight}</span>
+            )}
           </h2>
 
           <p className="text-gray-600 text-sm md:text-base leading-relaxed">
@@ -100,10 +104,12 @@ export default function ContactSection() {
               </div>
 
               <h3 className="text-2xl sm:text-[30px] font-extrabold text-white leading-[1.2]">
-                {infoCard.titleLine1}{" "}
-                <span className="text-[#22c55e] block">
-                  {infoCard.titleHighlight}
-                </span>
+                {infoCard.heading.main}{" "}
+                {infoCard.heading.highlight && (
+                  <span className="text-[#22c55e] block">
+                    {infoCard.heading.highlight}
+                  </span>
+                )}
               </h3>
 
               <p className="mt-3.5 text-gray-200 text-xs sm:text-[13.5px] leading-relaxed">
@@ -168,14 +174,14 @@ export default function ContactSection() {
               <div className="flex items-center gap-2.5">
                 {infoCard.socials.map((s) => (
                   <a
-                    key={s.platform}
-                    href={s.href}
+                    key={s.platform || s.name}
+                    href={s.href || s.url || "#"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={s.platform}
+                    aria-label={s.platform || s.name}
                     className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#16a34a] hover:scale-110 flex items-center justify-center text-white transition-all duration-200 shadow-sm"
                   >
-                    {getSocialIcon(s.platform)}
+                    {getSocialIcon(s.platform || s.icon)}
                   </a>
                 ))}
               </div>
@@ -192,8 +198,10 @@ export default function ContactSection() {
               </div>
 
               <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0f2e48] leading-tight">
-                {form.titlePrefix}
-                <span className="text-[#16a34a]">{form.titleHighlight}</span>
+                {form.heading.main}
+                {form.heading.highlight && (
+                  <span className="text-[#16a34a]">{form.heading.highlight}</span>
+                )}
               </h3>
 
               <p className="mt-2 text-gray-600 text-sm leading-relaxed mb-6">
@@ -233,7 +241,9 @@ export default function ContactSection() {
                       className="w-full pl-11 pr-4 py-3.5 bg-white rounded-xl border border-gray-200 text-sm text-[#0f2e48] placeholder-gray-400 focus:outline-none focus:border-[#16a34a] focus:ring-1 focus:ring-[#16a34a] transition-all"
                     />
                   </div>
+                </div>
 
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
                       <FiPhone className="w-4 h-4" />
@@ -266,11 +276,11 @@ export default function ContactSection() {
                   </div>
                 </div>
 
-                <div className="relative">
+                <div>
                   <textarea
                     rows={4}
                     required
-                    placeholder="Your Message"
+                    placeholder="Write your message here..."
                     value={formData.message}
                     onChange={(e) =>
                       setFormData({ ...formData, message: e.target.value })
@@ -279,38 +289,37 @@ export default function ContactSection() {
                   />
                 </div>
 
-                <div className="pt-2 flex items-center justify-between">
-                  <button
-                    type="submit"
-                    className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#15803d] hover:bg-[#16a34a] text-white font-bold text-sm shadow-md transition-all duration-200 cursor-pointer group"
-                  >
-                    <span>{form.submitButton}</span>
-                    <span className="w-6 h-6 rounded-full bg-[#eab308] text-[#0f2e48] flex items-center justify-center transition-transform group-hover:translate-x-1">
-                      <FiArrowRight className="w-3.5 h-3.5 stroke-[3]" />
-                    </span>
-                  </button>
+                <button
+                  type="submit"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-9 py-3.5 rounded-full bg-gradient-to-r from-[#ff9f00] to-[#ffb703] hover:from-[#f59e0b] hover:to-[#eab308] text-[#0f2e48] font-bold text-base shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
+                >
+                  <span>{form.submitButton}</span>
+                  <FiArrowRight className="w-4 h-4 stroke-[2.5]" />
+                </button>
 
-                  {submitted && (
-                    <span className="text-sm font-semibold text-[#16a34a] animate-fade-in">
-                      ✓ Thank you! Message sent successfully.
-                    </span>
-                  )}
-                </div>
+                {submitted && (
+                  <div className="p-3 bg-[#dcfce7] border border-[#86efac] text-[#15803d] rounded-xl text-sm font-semibold text-center animate-fade-in">
+                    Thank you! Your message has been sent successfully. Our team will contact you soon.
+                  </div>
+                )}
               </form>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="w-full h-[400px] sm:h-[450px] relative border-t border-gray-200">
-        <iframe
-          src={mapEmbedUrl}
-          title="SunAviora Location Map"
-          className="w-full h-full border-0"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          allowFullScreen
-        />
+        <div className="mt-12 sm:mt-16 w-full h-[360px] sm:h-[420px] rounded-[32px] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-100">
+          <iframe
+            src={mapEmbedUrl}
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Office Location Map"
+            className="w-full h-full"
+          />
+        </div>
       </div>
     </section>
   );

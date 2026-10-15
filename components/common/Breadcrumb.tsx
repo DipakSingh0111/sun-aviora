@@ -3,25 +3,23 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import siteData from "@/data/sun-aviora.json";
+import type { BreadcrumbItem, SectionProps } from "@/types/sun-aviora.types";
 
-interface BreadcrumbItem {
-  label: string;
-  href?: string;
-}
-
-interface BreadcrumbProps {
-  title: string;
-  breadcrumbs: BreadcrumbItem[];
+export type BreadcrumbProps = SectionProps.Breadcrumb & {
+  title?: string;
+  breadcrumbs?: BreadcrumbItem[];
   backgroundImage?: string;
-}
+};
 
 export default function Breadcrumb({
-  title,
-  breadcrumbs,
-  backgroundImage,
+  data,
+  title: propTitle,
+  breadcrumbs: propBreadcrumbs,
+  backgroundImage: propBgImage,
 }: BreadcrumbProps) {
-  const bgImg = backgroundImage || siteData.heroBanner.backgroundImage;
+  const title = propTitle || data?.title || "Page";
+  const breadcrumbs = propBreadcrumbs || data?.breadcrumbs || [];
+  const bgImg = propBgImage || data?.backgroundImage || "/images/Hero-banner.png";
 
   return (
     <section className="relative w-full min-h-[260px] sm:min-h-[300px] md:min-h-[340px] flex items-center overflow-hidden">

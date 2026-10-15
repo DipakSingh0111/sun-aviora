@@ -4,12 +4,17 @@ import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { FaStar, FaQuoteLeft } from "react-icons/fa";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
-import data from "@/data/sun-aviora.json";
+import type { SectionProps } from "@/types/sun-aviora.types";
+import { getSunAvioraSections } from "@/lib/sun-aviora";
 
-export default function TestimonialsSection() {
-  const { testimonials } = data;
+export default function TestimonialsSection({
+  data,
+}: SectionProps.Testimonials) {
+  const testimonialsData = data || getSunAvioraSections().Testimonials?.variants?.SunAvioraTestimonials1;
   const sliderRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  if (!testimonialsData) return null;
 
   const scrollToIndex = (index: number) => {
     if (!sliderRef.current) return;
@@ -25,7 +30,7 @@ export default function TestimonialsSection() {
   };
 
   const handleNext = () => {
-    const nextIdx = Math.min(activeIndex + 1, testimonials.reviews.length - 1);
+    const nextIdx = Math.min(activeIndex + 1, testimonialsData.list.length - 1);
     scrollToIndex(nextIdx);
   };
 
@@ -39,7 +44,7 @@ export default function TestimonialsSection() {
     const scrollLeft = sliderRef.current.scrollLeft;
     const cardWidth = sliderRef.current.children[0]?.clientWidth || 280;
     const newIdx = Math.round(scrollLeft / cardWidth);
-    if (newIdx !== activeIndex && newIdx < testimonials.reviews.length) {
+    if (newIdx !== activeIndex && newIdx < testimonialsData.list.length) {
       setActiveIndex(newIdx);
     }
   };
@@ -54,7 +59,7 @@ export default function TestimonialsSection() {
 
               <div className="relative w-full aspect-[4/5] overflow-hidden rounded-[32px] border-4 border-white shadow-xl">
                 <Image
-                  src={testimonials.leftImage}
+                  src={testimonialsData.image}
                   alt="Solar Engineer Field Expert"
                   fill
                   className="object-cover"
@@ -66,7 +71,7 @@ export default function TestimonialsSection() {
                     “
                   </div>
                   <p className="text-xs sm:text-sm font-semibold leading-snug whitespace-pre-line">
-                    {testimonials.imageBadge.text}
+                    {testimonialsData.imageBadge.text}
                   </p>
                 </div>
               </div>
@@ -77,19 +82,19 @@ export default function TestimonialsSection() {
             <div className="flex items-center gap-2.5 mb-2">
               <span className="w-7 h-[2px] bg-[#16a34a]" />
               <span className="text-[#16a34a] font-semibold text-sm tracking-wide">
-                {testimonials.badge}
+                {testimonialsData.badge}
               </span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#0f172a] leading-tight tracking-tight">
-              {testimonials.titlePrefix}
+              {testimonialsData.heading.main}
               <span className="text-[#16a34a]">
-                {testimonials.titleHighlight}
+                {testimonialsData.heading.highlight}
               </span>
             </h2>
 
             <p className="mt-3 text-gray-600 text-sm sm:text-base leading-relaxed max-w-2xl">
-              {testimonials.description}
+              {testimonialsData.description}
             </p>
 
             <div
@@ -98,7 +103,7 @@ export default function TestimonialsSection() {
               className="mt-8 flex gap-5 overflow-x-auto scroll-smooth pb-5 pt-1 no-scrollbar snap-x snap-mandatory"
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
-              {testimonials.reviews.map((rev) => (
+              {testimonialsData.list.map((rev) => (
                 <div
                   key={rev.id}
                   className="shrink-0 w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)] bg-white rounded-[26px] p-6 shadow-[0_6px_25px_rgb(0,0,0,0.06)] border border-gray-100 flex flex-col justify-between snap-start transition-all duration-300 hover:shadow-[0_10px_30px_rgb(0,0,0,0.1)]"
@@ -114,7 +119,7 @@ export default function TestimonialsSection() {
                     </div>
 
                     <p className="text-gray-600 text-xs sm:text-[13px] leading-relaxed line-clamp-6">
-                      {rev.text}
+                      {rev.quote}
                     </p>
                   </div>
 
@@ -156,7 +161,7 @@ export default function TestimonialsSection() {
               </button>
 
               <div className="flex items-center gap-2">
-                {testimonials.reviews.map((_, i) => (
+                {testimonialsData.list.map((_, i) => (
                   <button
                     key={i}
                     type="button"
@@ -174,10 +179,10 @@ export default function TestimonialsSection() {
               <button
                 type="button"
                 onClick={handleNext}
-                disabled={activeIndex >= testimonials.reviews.length - 1}
+                disabled={activeIndex >= testimonialsData.list.length - 1}
                 aria-label="Next review"
                 className={`w-10 h-10 rounded-full flex items-center justify-center border transition-all ${
-                  activeIndex >= testimonials.reviews.length - 1
+                  activeIndex >= testimonialsData.list.length - 1
                     ? "border-gray-200 text-gray-300 cursor-not-allowed"
                     : "border-green-200 bg-[#eaf8ef] text-[#16a34a] hover:bg-[#16a34a] hover:text-white cursor-pointer"
                 }`}

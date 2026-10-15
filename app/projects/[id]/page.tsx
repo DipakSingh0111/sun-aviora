@@ -1,14 +1,16 @@
 import React, { Suspense } from "react";
 import type { Metadata } from "next";
-import ProjectDetailClient from "@/components/ProjectDetailClient";
-import data from "@/data/sun-aviora.json";
+import ProjectDetailClient from "@/components/projects/ProjectDetailClient";
+import { getSunAvioraSections } from "@/lib/sun-aviora";
 
 export async function generateStaticParams() {
+  const sections = getSunAvioraSections();
+  const projectsVariant = sections.Projects?.variants?.SunAvioraProjects1;
   const allProjects = [
-    ...(data.projectsPage?.projects || []),
-    ...(data.latestProjects?.projects || []),
+    ...(projectsVariant?.page?.list || []),
+    ...(projectsVariant?.list || []),
   ];
-  const uniqueIds = Array.from(new Set(allProjects.map((p) => p.id)));
+  const uniqueIds = Array.from(new Set(allProjects.map((p: any) => p.id)));
   return uniqueIds.map((id) => ({ id }));
 }
 
@@ -30,9 +32,11 @@ export default async function ProjectDynamicDetailPage({
   params: Promise<{ id: string }>;
 }) {
   await params;
+  const sections = getSunAvioraSections();
+
   return (
     <Suspense fallback={<div className="py-20 text-center">Loading...</div>}>
-      <ProjectDetailClient />
+      <ProjectDetailClient data={sections.Projects?.variants?.SunAvioraProjects1?.details} />
     </Suspense>
   );
 }

@@ -1,8 +1,8 @@
 import React from "react";
 import type { Metadata } from "next";
 import Breadcrumb from "@/components/common/Breadcrumb";
-import BlogListing from "@/components/BlogListing";
-import data from "@/data/sun-aviora.json";
+import BlogListing from "@/components/blog/BlogListing";
+import { getSunAvioraSections } from "@/lib/sun-aviora";
 
 export const metadata: Metadata = {
   title: "Blog - SunAviora",
@@ -11,20 +11,17 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-  const blogPage = data.blogPage || {
-    banner: {
-      title: "Blog",
-      breadcrumbs: [{ label: "Home", href: "/" }, { label: "Blog" }],
-    },
-  };
+  const sections = getSunAvioraSections();
+  const pageBanner = sections.PageBanners?.variants?.SunAvioraPageBanners1?.pages?.blog;
 
   return (
     <main className="w-full flex flex-col">
       <Breadcrumb
-        title={blogPage.banner.title}
-        breadcrumbs={blogPage.banner.breadcrumbs}
+        data={pageBanner}
+        title={pageBanner?.title || "Blog"}
+        breadcrumbs={pageBanner?.breadcrumbs || [{ label: "Home", href: "/" }, { label: "Blog" }]}
       />
-      <BlogListing />
+      <BlogListing data={sections.BlogNews?.variants?.SunAvioraBlogNews1} />
     </main>
   );
 }

@@ -8,7 +8,8 @@ import { LuSettings2 } from "react-icons/lu";
 import { FaTools } from "react-icons/fa";
 import { TbCoinRupee } from "react-icons/tb";
 import { PiShieldCheckFill, PiLeafBold, PiChartBarFill, PiPlantBold } from "react-icons/pi";
-import data from "@/data/sun-aviora.json";
+import { getSunAvioraSections } from "@/lib/sun-aviora";
+import type { ServicesData } from "@/types/sun-aviora.types";
 
 function StepIcon({ type }: { type: string }) {
   const iconProps = { className: "w-5 h-5 text-white stroke-[2.2]" };
@@ -46,15 +47,21 @@ function FeatureCardIcon({ type }: { type: string }) {
   }
 }
 
-interface ServiceDetailClientProps {
+export interface ServiceDetailClientProps {
   initialServiceId?: string;
+  data?: ServicesData["serviceDetails"];
 }
 
 export default function ServiceDetailClient({
   initialServiceId = "hybrid-wind-solar",
+  data,
 }: ServiceDetailClientProps) {
-  const { serviceDetailData } = data;
-  const { sidebarList, defaultService } = serviceDetailData;
+  const sections = getSunAvioraSections();
+  const serviceDetailData =
+    data || sections.Services?.variants?.SunAvioraServices1?.serviceDetails;
+
+  const sidebarList = serviceDetailData?.sidebarList || [];
+  const defaultService = serviceDetailData?.defaultService || ({} as any);
 
   const [activeServiceId, setActiveServiceId] = useState<string>(initialServiceId);
   const [fullScreenImage, setFullScreenImage] = useState<{ src: string; alt: string } | null>(null);
@@ -214,18 +221,18 @@ export default function ServiceDetailClient({
           {/* Delivery Process Section */}
           <div className="mt-2">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0f2e48] leading-tight">
-              {currentService.deliverySection.titlePrefix}
+              {currentService?.deliverySection?.heading?.main || currentService?.deliverySection?.titlePrefix || "How We Deliver "}
               <span className="text-[#16a34a]">
-                {currentService.deliverySection.titleHighlight}
+                {currentService?.deliverySection?.heading?.highlight || currentService?.deliverySection?.titleHighlight || "Hybrid Solutions"}
               </span>
             </h2>
 
             <p className="mt-2 text-gray-600 text-xs sm:text-[14.5px] leading-relaxed">
-              {currentService.deliverySection.description}
+              {currentService?.deliverySection?.description}
             </p>
 
             <div className="mt-6 space-y-4">
-              {currentService.deliverySection.steps.map((step) => (
+              {((currentService?.deliverySection as any)?.steps || (currentService?.deliverySection as any)?.list || []).map((step: any) => (
                 <div key={step.id} className="flex items-start gap-4">
                   <div className="shrink-0 w-11 h-11 rounded-full bg-[#16a34a] flex items-center justify-center text-white shadow-md">
                     <StepIcon type={step.icon} />
@@ -246,18 +253,18 @@ export default function ServiceDetailClient({
           {/* Why Choose Service 6-Cards Grid */}
           <div className="mt-12">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0f2e48] leading-tight">
-              {currentService.whyChoose.titlePrefix}
+              {currentService?.whyChoose?.heading?.main || currentService?.whyChoose?.titlePrefix || "Why Choose Our "}
               <span className="text-[#16a34a]">
-                {currentService.whyChoose.titleHighlight}
+                {currentService?.whyChoose?.heading?.highlight || currentService?.whyChoose?.titleHighlight || "Hybrid Wind & Solar Service?"}
               </span>
             </h2>
 
             <p className="mt-2 text-gray-600 text-xs sm:text-[14.5px] leading-relaxed">
-              {currentService.whyChoose.description}
+              {currentService?.whyChoose?.description}
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4.5 mt-6">
-              {currentService.whyChoose.cards.map((c) => (
+              {((currentService?.whyChoose as any)?.cards || (currentService?.whyChoose as any)?.list || []).map((c: any) => (
                 <div
                   key={c.id}
                   className="p-5 rounded-2xl bg-[#f8fafc] border border-gray-100 flex flex-col justify-between hover:shadow-md transition-shadow duration-200"
