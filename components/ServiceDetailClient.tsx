@@ -2,7 +2,8 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { FiChevronRight, FiFileText, FiHeadphones } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiChevronRight, FiFileText, FiHeadphones, FiMaximize2, FiX } from "react-icons/fi";
 import { LuSettings2 } from "react-icons/lu";
 import { FaTools } from "react-icons/fa";
 import { TbCoinRupee } from "react-icons/tb";
@@ -26,7 +27,7 @@ function StepIcon({ type }: { type: string }) {
 }
 
 function FeatureCardIcon({ type }: { type: string }) {
-  const iconProps = { className: "w-6 h-6 text-[#16a34a]" };
+  const iconProps = { className: "w-7 h-7 text-[#16a34a]" };
   switch (type) {
     case "Leaf":
       return <PiLeafBold {...iconProps} />;
@@ -56,6 +57,7 @@ export default function ServiceDetailClient({
   const { sidebarList, defaultService } = serviceDetailData;
 
   const [activeServiceId, setActiveServiceId] = useState<string>(initialServiceId);
+  const [fullScreenImage, setFullScreenImage] = useState<{ src: string; alt: string } | null>(null);
 
   const getServiceData = (id: string) => {
     const item = sidebarList.find((s) => s.id === id);
@@ -67,7 +69,7 @@ export default function ServiceDetailClient({
         badge: "Our Service",
         titlePrefix: "Solar ",
         titleHighlight: "Panel Installation",
-        mainImage: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1200&auto=format&fit=crop",
+        mainImage: "/images/sun-aviora_01.jpg",
         tagline: "High-efficiency residential and commercial rooftop solar installation with maximum lifetime energy yield.",
         description: "Our certified engineers handle everything from preliminary solar site assessment, structural load checking, net metering liaisoning to turnkey commissioning of high-tier monocrystalline solar arrays.",
       };
@@ -79,7 +81,7 @@ export default function ServiceDetailClient({
         badge: "Our Service",
         titlePrefix: "Inverter & ",
         titleHighlight: "Battery Storage Solutions",
-        mainImage: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop",
+        mainImage: "/images/sun-aviora_02.jpg",
         tagline: "Uninterrupted 24/7 power backup with smart lithium iron phosphate (LiFePO4) energy storage systems.",
         description: "Never worry about blackout or fluctuating grid power. Our modular battery banks store abundant daytime solar energy and seamlessly power high-draw appliances through the night.",
       };
@@ -142,15 +144,23 @@ export default function ServiceDetailClient({
         {/* Right Main Content */}
         <div className="lg:col-span-8 flex flex-col">
           {/* Main Hero Showcase Image */}
-          <div className="relative w-full aspect-[16/9] sm:aspect-[16/8.5] rounded-[30px] overflow-hidden shadow-lg border border-gray-100">
+          <div
+            onClick={() => setFullScreenImage({ src: currentService.mainImage, alt: currentService.titlePrefix + currentService.titleHighlight })}
+            className="group relative w-full aspect-[16/9] sm:aspect-[16/8.5] rounded-[30px] overflow-hidden shadow-lg border border-gray-100 cursor-pointer"
+          >
             <Image
               src={currentService.mainImage}
               alt={currentService.titlePrefix + currentService.titleHighlight}
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
               priority
               sizes="(max-width: 1024px) 100vw, 850px"
             />
+            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span className="p-3.5 rounded-full bg-white/90 text-[#0f2e48] shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
+                <FiMaximize2 className="w-5 h-5 text-[#16a34a]" />
+              </span>
+            </div>
           </div>
 
           {/* Heading */}
@@ -183,14 +193,20 @@ export default function ServiceDetailClient({
             {currentService.subImages.map((imgUrl: string, idx: number) => (
               <div
                 key={idx}
-                className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-md"
+                onClick={() => setFullScreenImage({ src: imgUrl, alt: `${currentService.titlePrefix} step ${idx + 1}` })}
+                className="group relative aspect-[16/10] rounded-2xl overflow-hidden shadow-md cursor-pointer border border-gray-100"
               >
                 <Image
                   src={imgUrl}
                   alt={`Solar hybrid installation step ${idx + 1}`}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span className="p-3 rounded-full bg-white/90 text-[#0f2e48] shadow-md transform scale-75 group-hover:scale-100 transition-transform">
+                    <FiMaximize2 className="w-5 h-5 text-[#16a34a]" />
+                  </span>
+                </div>
               </div>
             ))}
           </div>
@@ -247,7 +263,7 @@ export default function ServiceDetailClient({
                   className="p-5 rounded-2xl bg-[#f8fafc] border border-gray-100 flex flex-col justify-between hover:shadow-md transition-shadow duration-200"
                 >
                   <div>
-                    <div className="w-10 h-10 rounded-xl bg-[#eaf8ef] flex items-center justify-center mb-3">
+                    <div className="w-13 h-13 rounded-2xl bg-[#eaf8ef] flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-105">
                       <FeatureCardIcon type={c.icon} />
                     </div>
 
@@ -267,6 +283,54 @@ export default function ServiceDetailClient({
         </div>
 
       </div>
+
+      {/* Fullscreen Image Lightbox Modal */}
+      <AnimatePresence>
+        {fullScreenImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setFullScreenImage(null)}
+            className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8 cursor-zoom-out"
+          >
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setFullScreenImage(null);
+              }}
+              aria-label="Close fullscreen preview"
+              className="absolute top-5 right-5 sm:top-8 sm:right-8 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer z-10"
+            >
+              <FiX className="w-6 h-6" />
+            </button>
+
+            <motion.div
+              initial={{ scale: 0.85, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.85, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-5xl max-h-[85vh] w-full h-full flex flex-col items-center justify-center"
+            >
+              <div className="relative w-full h-[70vh] sm:h-[80vh] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                <Image
+                  src={fullScreenImage.src}
+                  alt={fullScreenImage.alt}
+                  fill
+                  className="object-contain"
+                  sizes="100vw"
+                  priority
+                />
+              </div>
+              <p className="mt-4 text-white/80 text-sm font-medium tracking-wide text-center">
+                {fullScreenImage.alt}
+              </p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

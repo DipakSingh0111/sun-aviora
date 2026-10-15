@@ -17,7 +17,7 @@ import { PiLeafBold } from "react-icons/pi";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { LuSettings2 } from "react-icons/lu";
 import { HiLightBulb } from "react-icons/hi2";
-import PageBanner from "@/components/common/PageBanner";
+import Breadcrumb from "@/components/common/Breadcrumb";
 import data from "@/data/sun-aviora.json";
 
 function SpecIcon({ type }: { type: string }) {
@@ -51,7 +51,7 @@ export default function ProjectDetailClient() {
 
   return (
     <main className="w-full flex flex-col font-sans">
-      <PageBanner
+      <Breadcrumb
         title={banner.title}
         breadcrumbs={banner.breadcrumbs}
       />
@@ -139,8 +139,8 @@ export default function ProjectDetailClient() {
                       </div>
                     </div>
 
-                    <div className="shrink-0 text-white/50 group-hover:text-[#22c55e] transition-colors pr-1">
-                      <BsArrowRightCircle className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
+                    <div className="shrink-0 text-white/50 group-hover:text-[#22c55e] transition-colors pr-1 flex items-center justify-center">
+                      <BsArrowRightCircle className="w-7 h-7 sm:w-8 sm:h-8 group-hover:scale-110 group-hover:translate-x-0.5 transition-all" />
                     </div>
                   </Link>
                 ))}
@@ -177,20 +177,20 @@ export default function ProjectDetailClient() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {/* Challenges Card */}
                 <div className="p-6 rounded-[24px] bg-[#fef2f2]/60 border border-red-100 flex flex-col justify-start">
-                  <div className="flex items-center gap-2 mb-4 text-[#ef4444]">
-                    <LuSettings2 className="w-5 h-5 stroke-[2.2]" />
+                  <div className="flex items-center gap-2.5 mb-4 text-[#ef4444]">
+                    <LuSettings2 className="w-6 h-6 stroke-[2.2]" />
                     <h3 className="text-base sm:text-lg font-bold text-[#0f2e48]">
                       Challenges
                     </h3>
                   </div>
 
-                  <ul className="space-y-3">
+                  <ul className="space-y-3.5">
                     {challengesSolutions.challenges.map((c, i) => (
                       <li
                         key={i}
-                        className="flex items-start gap-2.5 text-xs sm:text-[13.5px] text-gray-700 leading-snug"
+                        className="flex items-start gap-3 text-xs sm:text-[14px] text-gray-700 leading-snug"
                       >
-                        <FiXCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5 stroke-[2.5]" />
+                        <FiXCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5 stroke-[2.2]" />
                         <span>{c}</span>
                       </li>
                     ))}
@@ -199,20 +199,20 @@ export default function ProjectDetailClient() {
 
                 {/* Solutions Card */}
                 <div className="p-6 rounded-[24px] bg-[#f0fdf4]/80 border border-green-100 flex flex-col justify-start">
-                  <div className="flex items-center gap-2 mb-4 text-[#16a34a]">
-                    <HiLightBulb className="w-5 h-5" />
+                  <div className="flex items-center gap-2.5 mb-4 text-[#16a34a]">
+                    <HiLightBulb className="w-6 h-6" />
                     <h3 className="text-base sm:text-lg font-bold text-[#0f2e48]">
                       Solutions
                     </h3>
                   </div>
 
-                  <ul className="space-y-3">
+                  <ul className="space-y-3.5">
                     {challengesSolutions.solutions.map((s, i) => (
                       <li
                         key={i}
-                        className="flex items-start gap-2.5 text-xs sm:text-[13.5px] text-gray-700 leading-snug"
+                        className="flex items-start gap-3 text-xs sm:text-[14px] text-gray-700 leading-snug"
                       >
-                        <FiCheckCircle className="w-4 h-4 text-green-600 shrink-0 mt-0.5 stroke-[2.5]" />
+                        <FiCheckCircle className="w-5 h-5 text-green-600 shrink-0 mt-0.5 stroke-[2.2]" />
                         <span>{s}</span>
                       </li>
                     ))}

@@ -10,17 +10,17 @@ interface BreadcrumbItem {
   href?: string;
 }
 
-interface PageBannerProps {
+interface BreadcrumbProps {
   title: string;
   breadcrumbs: BreadcrumbItem[];
   backgroundImage?: string;
 }
 
-export default function PageBanner({
+export default function Breadcrumb({
   title,
   breadcrumbs,
   backgroundImage,
-}: PageBannerProps) {
+}: BreadcrumbProps) {
   const bgImg = backgroundImage || siteData.heroBanner.backgroundImage;
 
   return (

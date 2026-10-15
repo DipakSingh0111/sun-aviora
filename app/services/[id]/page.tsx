@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import type { Metadata } from "next";
-import PageBanner from "@/components/common/PageBanner";
+import Breadcrumb from "@/components/common/Breadcrumb";
 import ServiceDetailClient from "@/components/ServiceDetailClient";
 import data from "@/data/sun-aviora.json";
 
@@ -35,7 +35,7 @@ export default async function ServiceDynamicDetailPage({
 
   return (
     <main className="w-full flex flex-col font-sans">
-      <PageBanner
+      <Breadcrumb
         title="Service Detail"
         breadcrumbs={[
           { label: "Home", href: "/" },

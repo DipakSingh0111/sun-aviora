@@ -1,6 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
-import PageBanner from "@/components/common/PageBanner";
+import Breadcrumb from "@/components/common/Breadcrumb";
 import FaqSection from "@/components/FaqSection";
 import data from "@/data/sun-aviora.json";
 
@@ -15,8 +15,7 @@ export default function FaqPage() {
 
   return (
     <main className="w-full flex flex-col">
-      {/* Reusable Page Banner */}
-      <PageBanner
+      <Breadcrumb
         title={faqPage.banner.title}
         breadcrumbs={faqPage.banner.breadcrumbs}
       />

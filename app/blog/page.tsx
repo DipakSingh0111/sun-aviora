@@ -1,6 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
-import PageBanner from "@/components/common/PageBanner";
+import Breadcrumb from "@/components/common/Breadcrumb";
 import BlogListing from "@/components/BlogListing";
 import data from "@/data/sun-aviora.json";
 
@@ -20,7 +20,7 @@ export default function BlogPage() {
 
   return (
     <main className="w-full flex flex-col">
-      <PageBanner
+      <Breadcrumb
         title={blogPage.banner.title}
         breadcrumbs={blogPage.banner.breadcrumbs}
       />

@@ -42,15 +42,15 @@ export default function ContactSection() {
   const getSocialIcon = (platform: string) => {
     switch (platform) {
       case "facebook":
-        return <FaFacebookF className="w-3.5 h-3.5" />;
+        return <FaFacebookF className="w-5 h-5" />;
       case "twitter":
-        return <FaXTwitter className="w-3.5 h-3.5" />;
+        return <FaXTwitter className="w-5 h-5" />;
       case "instagram":
-        return <FaInstagram className="w-3.5 h-3.5" />;
+        return <FaInstagram className="w-5 h-5" />;
       case "linkedin":
-        return <FaLinkedinIn className="w-3.5 h-3.5" />;
+        return <FaLinkedinIn className="w-5 h-5" />;
       case "youtube":
-        return <FaYoutube className="w-3.5 h-3.5" />;
+        return <FaYoutube className="w-5 h-5" />;
       default:
         return null;
     }
@@ -161,17 +161,19 @@ export default function ContactSection() {
               </div>
             </div>
 
-            <div className="relative z-10 pt-8 mt-6 border-t border-white/10 flex items-center gap-3">
-              <span className="text-xs font-semibold text-gray-300">
+            <div className="relative z-10 pt-8 mt-6 border-t border-white/10 flex items-center gap-3.5">
+              <span className="text-sm font-semibold text-gray-200">
                 Follow Us —
               </span>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2.5">
                 {infoCard.socials.map((s) => (
                   <a
                     key={s.platform}
                     href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={s.platform}
-                    className="w-7 h-7 rounded-full bg-white/10 hover:bg-[#16a34a] flex items-center justify-center text-white transition-colors"
+                    className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#16a34a] hover:scale-110 flex items-center justify-center text-white transition-all duration-200 shadow-sm"
                   >
                     {getSocialIcon(s.platform)}
                   </a>

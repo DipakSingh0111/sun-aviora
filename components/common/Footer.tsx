@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FiChevronRight, FiMapPin, FiPhone, FiMail } from "react-icons/fi";
-import { FaFacebookF, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import { FaFacebookF, FaLinkedinIn, FaYoutube, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import data from "@/data/sun-aviora.json";
 
@@ -15,6 +15,8 @@ export default function Footer() {
         return <FaFacebookF className="w-4 h-4" />;
       case "twitter":
         return <FaXTwitter className="w-4 h-4" />;
+      case "instagram":
+        return <FaInstagram className="w-4 h-4" />;
       case "linkedin":
         return <FaLinkedinIn className="w-4 h-4" />;
       case "youtube":
@@ -154,9 +156,7 @@ export default function Footer() {
 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-5">
           <p className="text-gray-400 text-xs sm:text-sm text-center sm:text-left">
-            © Copyright 2026{" "}
-            <span className="text-[#22c55e] font-semibold">SunAviora</span>. All
-            Rights Reserved.
+            {footer.copyright}
           </p>
 
           <div className="flex items-center gap-3">
@@ -164,6 +164,8 @@ export default function Footer() {
               <a
                 key={soc.platform}
                 href={soc.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={soc.platform}
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#16a34a] flex items-center justify-center text-white transition-all duration-200 transform hover:-translate-y-0.5"
               >

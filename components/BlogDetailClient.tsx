@@ -3,7 +3,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FiCalendar, FiUser, FiChevronRight } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiCalendar, FiUser, FiChevronRight, FiX, FiMaximize2 } from "react-icons/fi";
 import { FaFacebookF, FaLinkedinIn, FaYoutube, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import data from "@/data/sun-aviora.json";
@@ -20,6 +21,7 @@ export default function BlogDetailClient({ initialId }: BlogDetailClientProps) {
 
   const [activePostId, setActivePostId] = useState<string>(initialId);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [fullScreenImage, setFullScreenImage] = useState<{ src: string; alt: string } | null>(null);
 
   const currentPost =
     allPosts.find((p) => p.id === activePostId) ||
@@ -27,7 +29,7 @@ export default function BlogDetailClient({ initialId }: BlogDetailClientProps) {
       title: "How Solar Energy is Changing the Future of Clean Power",
       date: "February 23, 2025",
       category: "Solar Energy",
-      image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1200&auto=format&fit=crop",
+      image: "/images/sun-aviora_01.jpg",
       description: "Solar energy is no longer just an alternative — it has become a leading solution for a cleaner and greener future.",
     };
 
@@ -56,15 +58,23 @@ export default function BlogDetailClient({ initialId }: BlogDetailClientProps) {
     <section className="py-14 md:py-20 px-6 sm:px-10 lg:px-16 max-w-[1400px] mx-auto w-full bg-white font-sans">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
         <div className="lg:col-span-8 flex flex-col">
-          <div className="relative w-full aspect-[16/9] sm:aspect-[16/8.5] rounded-[30px] overflow-hidden shadow-lg border border-gray-100">
+          <div
+            onClick={() => setFullScreenImage({ src: currentPost.image, alt: currentPost.title })}
+            className="group relative w-full aspect-[16/9] sm:aspect-[16/8.5] rounded-[30px] overflow-hidden shadow-lg border border-gray-100 cursor-pointer"
+          >
             <Image
               src={currentPost.image}
               alt={currentPost.title}
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
               priority
               sizes="(max-width: 1024px) 100vw, 850px"
             />
+            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span className="p-3.5 rounded-full bg-white/90 text-[#0f2e48] shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
+                <FiMaximize2 className="w-5 h-5 text-[#16a34a]" />
+              </span>
+            </div>
           </div>
 
           <div className="flex items-center gap-6 mt-6 text-xs sm:text-sm font-semibold text-gray-500">
@@ -128,21 +138,37 @@ export default function BlogDetailClient({ initialId }: BlogDetailClientProps) {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 my-8">
-            <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-md">
+            <div
+              onClick={() => setFullScreenImage({ src: "/images/sun-aviora_05.jpg", alt: "Solar Engineer inspection" })}
+              className="group relative aspect-[16/10] rounded-2xl overflow-hidden shadow-md cursor-pointer border border-gray-100"
+            >
               <Image
-                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=600&auto=format&fit=crop"
+                src="/images/sun-aviora_05.jpg"
                 alt="Solar Engineer inspection"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span className="p-3 rounded-full bg-white/90 text-[#0f2e48] shadow-md transform scale-75 group-hover:scale-100 transition-transform">
+                  <FiMaximize2 className="w-5 h-5 text-[#16a34a]" />
+                </span>
+              </div>
             </div>
-            <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-md">
+            <div
+              onClick={() => setFullScreenImage({ src: "/images/sun-aviora_06.jpg", alt: "Solar installation on rooftop" })}
+              className="group relative aspect-[16/10] rounded-2xl overflow-hidden shadow-md cursor-pointer border border-gray-100"
+            >
               <Image
-                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=600&auto=format&fit=crop"
+                src="/images/sun-aviora_06.jpg"
                 alt="Solar installation on rooftop"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span className="p-3 rounded-full bg-white/90 text-[#0f2e48] shadow-md transform scale-75 group-hover:scale-100 transition-transform">
+                  <FiMaximize2 className="w-5 h-5 text-[#16a34a]" />
+                </span>
+              </div>
             </div>
           </div>
 
@@ -261,35 +287,45 @@ export default function BlogDetailClient({ initialId }: BlogDetailClientProps) {
 
             <div className="flex items-center gap-3">
               <a
-                href="#"
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Facebook"
                 className="w-10 h-10 rounded-full bg-[#eaf8ef] text-[#16a34a] hover:bg-[#16a34a] hover:text-white flex items-center justify-center transition-colors"
               >
                 <FaFacebookF className="w-4 h-4" />
               </a>
               <a
-                href="#"
+                href="https://www.twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="X Twitter"
                 className="w-10 h-10 rounded-full bg-[#eaf8ef] text-[#16a34a] hover:bg-[#16a34a] hover:text-white flex items-center justify-center transition-colors"
               >
                 <FaXTwitter className="w-4 h-4" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="w-10 h-10 rounded-full bg-[#eaf8ef] text-[#16a34a] hover:bg-[#16a34a] hover:text-white flex items-center justify-center transition-colors"
               >
                 <FaInstagram className="w-4 h-4" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 className="w-10 h-10 rounded-full bg-[#eaf8ef] text-[#16a34a] hover:bg-[#16a34a] hover:text-white flex items-center justify-center transition-colors"
               >
                 <FaLinkedinIn className="w-4 h-4" />
               </a>
               <a
-                href="#"
+                href="https://www.youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="YouTube"
                 className="w-10 h-10 rounded-full bg-[#eaf8ef] text-[#16a34a] hover:bg-[#16a34a] hover:text-white flex items-center justify-center transition-colors"
               >
@@ -299,6 +335,54 @@ export default function BlogDetailClient({ initialId }: BlogDetailClientProps) {
           </div>
         </aside>
       </div>
+
+      {/* Fullscreen Image Lightbox Modal */}
+      <AnimatePresence>
+        {fullScreenImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setFullScreenImage(null)}
+            className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8 cursor-zoom-out"
+          >
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setFullScreenImage(null);
+              }}
+              aria-label="Close fullscreen preview"
+              className="absolute top-5 right-5 sm:top-8 sm:right-8 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer z-10"
+            >
+              <FiX className="w-6 h-6" />
+            </button>
+
+            <motion.div
+              initial={{ scale: 0.85, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.85, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-5xl max-h-[85vh] w-full h-full flex flex-col items-center justify-center"
+            >
+              <div className="relative w-full h-[70vh] sm:h-[80vh] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                <Image
+                  src={fullScreenImage.src}
+                  alt={fullScreenImage.alt}
+                  fill
+                  className="object-contain"
+                  sizes="100vw"
+                  priority
+                />
+              </div>
+              <p className="mt-4 text-white/80 text-sm font-medium tracking-wide text-center">
+                {fullScreenImage.alt}
+              </p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

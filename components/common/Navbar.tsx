@@ -70,7 +70,7 @@ export default function Navbar() {
             })}
           </nav>
 
-          <div className="hidden sm:flex items-center">
+          <div className="hidden lg:flex items-center">
             <Link
               href={navbar.ctaButton.href}
               className="group inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-gradient-to-r from-[#ff9f00] to-[#ffb703] hover:from-[#f59e0b] hover:to-[#eab308] text-[#0f2e48] font-bold text-[16px] shadow-sm hover:shadow-md transition-all duration-200"
@@ -93,14 +93,7 @@ export default function Navbar() {
             </Link>
           </div>
 
-          <div className="flex lg:hidden items-center gap-3">
-            <Link
-              href={navbar.ctaButton.href}
-              className="sm:hidden inline-flex items-center justify-center px-4 py-2 rounded-full bg-[#ffb703] text-[#0f2e48] font-bold text-xs"
-            >
-              Quote
-            </Link>
-
+          <div className="flex lg:hidden items-center">
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}

@@ -79,11 +79,11 @@ export default function ServicesSection() {
                   <div className="absolute -top-1 -left-1 z-20">
                     <div className="bg-white p-1.5 rounded-br-[28px] rounded-tl-[24px]">
                       <div
-                        className={`w-14 h-14 rounded-full flex items-center justify-center text-white border-[3px] border-white shadow-md ${
+                        className={`w-15 h-15 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-white border-[3px] border-white shadow-md ${
                           isGreen ? "bg-[#15803d]" : "bg-[#f59e0b]"
                         }`}
                       >
-                        <Icon className="w-7 h-7" />
+                        <Icon className="w-8 h-8 sm:w-8.5 sm:h-8.5" />
                       </div>
                     </div>
                   </div>

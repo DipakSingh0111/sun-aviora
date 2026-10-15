@@ -1,6 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
-import PageBanner from "@/components/common/PageBanner";
+import Breadcrumb from "@/components/common/Breadcrumb";
 import AboutSection from "@/components/AboutSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import StatsSection from "@/components/StatsSection";
@@ -15,8 +15,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main className="w-full flex flex-col">
-      {/* Reusable Page Banner */}
-      <PageBanner
+      <Breadcrumb
         title="About Us"
         breadcrumbs={[
           { label: "Home", href: "/" },

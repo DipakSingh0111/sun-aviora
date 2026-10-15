@@ -11,7 +11,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 import data from "@/data/sun-aviora.json";
 
 function ProjectIcon({ type }: { type: string }) {
-  const iconProps = { className: "w-6 h-6 text-[#15803d]" };
+  const iconProps = { className: "w-8 h-8 text-[#15803d]" };
   switch (type) {
     case "Home":
       return <HiHome {...iconProps} />;
@@ -82,8 +82,8 @@ export default function LatestProjects() {
                 </div>
 
                 <div className="p-5 flex items-center justify-between gap-3 bg-white">
-                  <div className="flex items-center gap-3 min-w-0">
-                    <div className="shrink-0 w-12 h-12 rounded-full bg-[#eaf8ef] flex items-center justify-center border border-[#d2f3dd] transition-transform duration-300 group-hover:rotate-6">
+                  <div className="flex items-center gap-3.5 min-w-0">
+                    <div className="shrink-0 w-14 h-14 rounded-full bg-[#eaf8ef] flex items-center justify-center border border-[#d2f3dd] transition-transform duration-300 group-hover:rotate-6 shadow-sm">
                       <ProjectIcon type={project.icon} />
                     </div>
 
@@ -100,8 +100,8 @@ export default function LatestProjects() {
                     </div>
                   </div>
 
-                  <div className="shrink-0 w-9 h-9 rounded-full bg-[#16a34a] flex items-center justify-center text-white shadow-sm transition-transform duration-200 group-hover:scale-110">
-                    <FiArrowUpRight className="w-5 h-5" />
+                  <div className="shrink-0 w-10 h-10 rounded-full bg-[#16a34a] flex items-center justify-center text-white shadow-sm transition-transform duration-200 group-hover:scale-110">
+                    <FiArrowUpRight className="w-5 h-5 stroke-[2.2]" />
                   </div>
                 </div>
               </Link>
