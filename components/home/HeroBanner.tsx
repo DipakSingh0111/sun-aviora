@@ -11,21 +11,21 @@ export default function HeroBanner({ data }: SectionProps.HeroBanner) {
   if (!heroData) return null;
 
   return (
-    <section className="relative w-full min-h-[420px] sm:min-h-[480px] md:min-h-[540px] lg:min-h-[600px] flex items-center overflow-hidden">
+    <section className="relative w-full min-h-[460px] sm:min-h-[520px] md:min-h-[580px] lg:min-h-[calc(100vh-80px)] max-h-[820px] flex items-center overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center sm:bg-[center_top] bg-no-repeat transition-transform duration-1000 scale-105"
+        className="absolute inset-0 bg-cover bg-center sm:bg-[center_top] bg-no-repeat transition-transform duration-1000 scale-100"
         style={{ backgroundImage: `url('${heroData.backgroundImage}')` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/25 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-transparent" />
       </div>
 
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 py-12 md:py-16">
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 py-10 sm:py-14 md:py-16">
         <div className="max-w-2xl text-left">
           <motion.div
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="flex items-center gap-3 mb-4 sm:mb-6"
+            className="flex items-center gap-3 mb-3 sm:mb-5"
           >
             <span className="text-white/95 text-xs sm:text-sm font-semibold tracking-[0.22em] uppercase">
               {heroData.badge}
@@ -33,7 +33,7 @@ export default function HeroBanner({ data }: SectionProps.HeroBanner) {
             <span className="w-8 sm:w-12 h-[2.5px] bg-[#fbbf24] rounded-full inline-block" />
           </motion.div>
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-black uppercase leading-[1.08] tracking-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[68px] xl:text-[74px] font-black uppercase leading-[1.1] tracking-tight">
             <motion.span
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -56,7 +56,7 @@ export default function HeroBanner({ data }: SectionProps.HeroBanner) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.45, ease: "easeOut" }}
-            className="mt-5 sm:mt-7 text-base sm:text-lg md:text-xl text-white/95 font-medium leading-relaxed max-w-xl"
+            className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg lg:text-xl text-white/95 font-medium leading-relaxed max-w-xl"
           >
             {heroData.description}
           </motion.p>
@@ -69,7 +69,7 @@ export default function HeroBanner({ data }: SectionProps.HeroBanner) {
           >
             <Link
               href={heroData.cta.href}
-              className="group inline-flex items-center justify-center gap-2.5 px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#ff9f00] to-[#ffb703] hover:from-[#f59e0b] hover:to-[#eab308] text-[#0f2e48] font-bold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-1 active:translate-y-0"
+              className="group inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3 sm:py-3.5 md:py-4 rounded-full bg-gradient-to-r from-[#ff9f00] to-[#ffb703] hover:from-[#f59e0b] hover:to-[#eab308] text-[#0f2e48] font-bold text-sm sm:text-base md:text-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-1 active:translate-y-0"
             >
               <span>{heroData.cta.label}</span>
               {heroData.cta.showArrow && (
